@@ -1,0 +1,9 @@
+body h1 {
+    color: orange;
+}
+
+$mainBlue: red;
+
+body h2 {
+    color: $mainBlue;
+}
