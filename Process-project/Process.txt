@@ -1,0 +1,90 @@
+1 - Criamos um pasta chamada Project e inicializamos o gerenciado de pacotes
+1.1 - npm init -y
+
+2 - Se o nosso package.json conter os pacotes necessários para o projeto, apenas fazemos a instalação dos mesmo através de um comando
+2.1 - npm install
+2.2 - Se não, utilizamos o npm para intalar os packages necessários
+
+3 - Adicionamos o arquivo .gitignore para que alguns arquivos que não serão uteis sejam enviados ao github
+
+4 - Criamos uma pasta app/assets padrão de projeto
+
+5 - AUTOMATIZAÇÃO JAVASCRIPT: 
+    Criamos uma pasta scripts dentro de assents e adicionamos um arquivo JS que iremos trabalhar futuramente.
+5.1 - Apos feito isso, instalamos o Webpack para gerenciar nossos arquivos JS (verificar se está no diretório do projeto):
+      npm install webpack webpack-cli --save-dev
+5.2 - Para usar o webpack, criamos uma pasta na raiz do arquivo Project: webpack.config.js
+5.2.1 - Dentro desse arquivos, codamos o que queremos que o webpack faça
+    EX: Assista e agrupe qualquer mudança no arquvio JS:
+        const path = require('path')
+
+        module.exports = {
+            entry: './app/assets/scripts/App.js', //Arquivo que será processado, assistido e agrupado
+            output: {
+                filename: 'bundled.js', 
+                path: path.resolve(__dirname, 'app') //Local aonde será gerado o novo arquivo agrupado
+            },
+            mode: 'development',
+            watch: true
+        }
+5.3 - Para que possamos fazer o webpack funcionar, rodamos ele através do codigo npm run nomeDoScript
+5.4 - O nomeDoScript está defino nos scripts dentro do arquivo package.json
+    EX: "scripts": {
+            "dev": "webpack",
+            "test": "echo \"Error: no test specified\" && exit 1"
+        },
+        Terminal: npm run dev
+
+6 - AUTOMATIZAÇÃO CSS:
+    Criamos uma pasta styles dentro de assents e adicionamos um arquivo CSS que iremos trabalhar futuramente.
+6.1 - Apos feito isso, instalamos o gerenciado de CSS para utilizar o webpack (verificar se está no diretório do projeto):
+      npm install css-loader style-loader --save-dev
+6.2 - Importamos o arquivo CSS para o arquivo JS:
+      import '../styles/styles.css'
+6.3 - Agora, para utilizarmos dos gerenciados instalados, em webpack.config.js, adicionamos o modulo com suas propriedades:
+    EX: const path = require('path')
+
+        module.exports = {
+            entry: './app/assets/scripts/App.js', //Arquivo que será processado, assistido e agrupado
+            output: {
+                filename: 'bundled.js', 
+                path: path.resolve(__dirname, 'app') //Local aonde será gerado o novo arquivo agrupado
+            },
+            mode: 'development',
+            watch: true,
+            //Configuração do webpack para entender e processar arquivos CSS
+            module: {
+                rules: [
+                    {
+                        test: /\.css$/i   //indica que os arquivos que queremos terminam com '.css'
+                        use: ['css-loader']         //Aqui, passamos os packages que instalamos para gerenciar o css 
+                    }
+                ]
+            }
+        }
+6.4 - Após feito isso, instalamos o package postcss para que possamos adicionar plugins para automatizar o código:
+        npm install postcss-loader --save-dev
+6.4.1 - No arquivo webpack.config.js em module, rules, use, passamos como parametro os parametros do postcss com seus plugins
+        const postCSSPlugins = [
+
+        ]
+        .
+        .
+        .
+        use: ['style-loader','css-loader', {loader: 'postcss-loader', options: {plugins: postCSSPlugins}}]
+6.4.2 - A const postCSSPlugins recebe um vetor com todos os plugins que desejamos utilizar no projeto. Para utilizar-los
+        devemos primeiro fazer a instalação dos mesmos:
+        EX: npm install postcss-simple-vars --save-dev //Possibilita utilização de variavel
+            npm install postcss-nested --save-dev
+            npm install autoprefixer --save-dev        //Não é preciso identificar o browser
+        OU simplismente: npm install postcss-simple-vars postcss-nested autoprefixer --save-dev
+6.4.3 - Após instalado, passa para a const postCSSPlugins os plugins:
+        const postCSSPlugins = [
+            require('postcss-simple-vars'),
+            require('postcss-nested'),
+            require('autoprefixer')
+        ]
+6.5 - Por padrão, o css-loader tentará manipular qualquer imagem que referenciarmos em nosso CSS 
+      (por exemplo, imagens de plano de fundo, etc ...). Embora isso seja ótimo em determinadas situações, 
+      para desativar isso e gerenciarmos nossos arquivos de imagem manualmente, ao listar 'css-loader' no seu arquivo 
+      webpack.config.js, você deverá adicionar uma opção ao final, como este 'css-loader? Url = false'.
