@@ -1,9 +1,8 @@
-body h1 {
-    color: orange;
-}
-
-$mainBlue: red;
-
-body h2 {
-    color: $mainBlue;
-}
+@import 'normalize.css';
+@import 'base/_variables';
+@import 'base/_global';
+@import 'base/_mixins';
+@import 'modules/_intro';
+@import 'modules/_btn';
+@import 'modules/_page-section';
+@import 'modules/_wrapper';

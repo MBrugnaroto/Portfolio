@@ -1,0 +1,43 @@
+.intro {
+    width: 100%;
+    position: relative;
+    
+    &__wellcome {
+        font-family: 'Montserrat', sans-serif;
+        font-style: bold;
+        font-size: .6rem; /* 16px */
+        text-transform: uppercase;
+        color: $grayWellcome;
+        letter-spacing: .0625‬rem;
+        margin-bottom: 10px;
+
+        @mixin atSmall {
+            font-size: 1rem;
+        }
+    }
+
+    &__name {
+        font-family: 'Montserrat',sans-serif;
+        font-style: bold;
+        text-transform: uppercase;
+        color: $grayName;
+        font-size: 1rem;
+        margin-bottom: 5px;
+
+        @mixin atSmall {
+            font-size: 2.75rem;
+        }
+    }
+
+    &__description {
+        font-size: .6rem;
+        color: $grayDescription;
+        max-width: 442px;
+        margin-top: 0px;
+        margin-bottom: 33px;
+
+        @mixin atSmall {
+            font-size: 1rem;
+        }
+    }
+}

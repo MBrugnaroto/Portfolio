@@ -1,0 +1,14 @@
+.btn {
+    background-color: $grayButton;
+    color:#ffffff;
+    border: none;
+    border-radius: .625rem;
+    font-size: .875rem;
+    font-weight: bold;
+    padding: .875rem 1.25rem;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: black;
+}

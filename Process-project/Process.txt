@@ -77,9 +77,13 @@
         EX: npm install postcss-simple-vars --save-dev //Possibilita utilização de variavel
             npm install postcss-nested --save-dev
             npm install autoprefixer --save-dev        //Não é preciso identificar o browser
+            npm install postcss-import --save-dev      //Para podermos dividir nosso CSS em modulos e exporta-los para um arquivo só.
+            npm install postcss-mixins                 //Para facilitar a utilizaçãode dos @media screen
         OU simplismente: npm install postcss-simple-vars postcss-nested autoprefixer --save-dev
 6.4.3 - Após instalado, passa para a const postCSSPlugins os plugins:
         const postCSSPlugins = [
+            require('postcss-import'),
+            require('postcss-mixins'),
             require('postcss-simple-vars'),
             require('postcss-nested'),
             require('autoprefixer')
@@ -88,3 +92,75 @@
       (por exemplo, imagens de plano de fundo, etc ...). Embora isso seja ótimo em determinadas situações, 
       para desativar isso e gerenciarmos nossos arquivos de imagem manualmente, ao listar 'css-loader' no seu arquivo 
       webpack.config.js, você deverá adicionar uma opção ao final, como este 'css-loader? Url = false'.
+6.6 - Após isso, criamos uma pasta chamada modules dentro da pasta styles, onde vamos colocar os modulos separados de cada CSS,
+      para que fique mais organizado e visivel o código.
+6.7 - Para estilos globais, criamos uma pasta chamada base dentro de styles e criamos um arquivo CSS (normalmente chamado _global.css).
+6.7.1 - Desse modo, criamos um novo arquivo para as variaveis que armazenam dados iguais, como cor (normalmente chamado _variables.css)
+6.8 - Agora, criaremos um arquivo chamado _mixins.css na pasta styles/base que será utilizada para organizar os @media screen e deixa-los
+      globalizados para o nosso projeto.
+6.8.1 - Nesse arquivo definimos mixins para o tamanho das telas.
+        EX: @define-mixin atSmall {
+                @media (min-width: 530px) {
+                    @mixin-content;
+                }
+            }
+6.8.2 - Sendo assim, quando quisermos utilizar o @media de 530px em um de nossos elementos da página, é só chamar pelo nome.
+        EX: @mixin atSmall {
+                font-size: 2.75rem;
+            }
+
+7 - AUTOMATIZAÇÃO HTML/CSS/JAVASCRIPT:
+    Para que cada alteração que for feita nesses arquivos não tenhamos que dar F5 no browser, criamos um server local
+7.1 - Para isso, primeiro temos que baixar o package:
+        npm install webpack-dev-server --save-dev
+7.2 - Apos isso, no arquivo webpack.config.js adicionamos a propriedade devServer para iniciar o server ao browser
+    EX: devServer: {
+        //Esse before é incluido para que qualquer mudança no html seja refletida no browser
+            before: function(app, server) {
+                server._watch('.app/**/*.html') //So primeiros ** são para cada subpasta dentro de app e o segundo * é para cara .html que encontrar
+            },
+            contentBase: path.join(__dirname, 'app'),
+            hot: true,
+            port: 3000
+        },
+        //watch: true, como ativamos o server, o browser ficará olhando para as atualizações, então não precisamos mais dessa função
+7.3 - Para que possamos fazer o webpack-server funcionar, rodamos ele através do codigo npm run nomeDoScript
+    EX: "scripts": {
+            "dev": "webpackwebpack-dev-server",
+            "test": "echo \"Error: no test specified\" && exit 1"
+        },
+        Terminal: npm run dev
+7.4 - Para que o nosso JS aceite um modulo hot, precisamos informar no arquivo App.js
+    EX: if (module.hto) {
+            module.hot.accept()
+        }
+7.5 - Para que possamos acessar o desenvolvimendo do site por outro dispositivo que esteja conectado a mesma rede, adiconamos a seguinte
+      linha na propriedade devServer:
+      host: '0.0.0.0'
+7.5.1 - Pelo terminal, acesse o IP através do comando ipconfig, anote o IPv. No celular, basta digitar o IPv:3000.
+
+8 - IMAGENS RESPONSIVAS - Utilizamos para melhorar a navegação do site em diferentes dispositivos, não tornar o site lento.
+8.1 - Método 1: Direção de arte e situação de corte (picture element)
+8.1.2 - Para esse método, utilizamos quando precisamos cortar o tamanho da imagem para diferentes tamanhos de tela
+        EX:
+        <picture>
+            <source srcset="localdaIMGGrande" media="(min-width: 1200px)"> //Para resoluções maiores que 1200px
+            <source srcset="localdaIMGMedia" media="(min-width: 760px)">   //Para resoluções maiores que 760px
+            <img src="localdaIMGPequena" alt="definição">                  //Para resoluções menores das que definimos
+        </picture>
+8.2 - Método 2: Resolução de Imagem e Situação do tamanho do arquivo (faster load times)
+8.2.1 -  Para esse método, utilizamos quando queremos manter o tamanho da imagem para qualquer tamanho de tela.
+        EX: 
+        <img srcset="localdaIMGPequena 570w, localdaIMGMedia 1200w, localdaIMGGrande 1920w" alt="definição">
+8.3 - Podemos mesclarar as duas para que o browser escolha qual é a melhor imagem para uma certa resolução.
+        EX:
+        <picture>
+            <picture>
+                <source srcset="assets/images/hero--large.jpg 1920w, assets/images/hero--large-hi-dpi.jpg 3840w" media="(min-width: 1380px)">
+                <source srcset="assets/images/hero--medium.jpg 1380w, assets/images/hero--medium-hi-dpi.jpg 2760w" media="(min-width: 990px)">
+                <source srcset="assets/images/hero--small.jpg 990w, assets/images/hero--small-hi-dpi.jpg 1980w" media="(min-width: 640px)">
+                <img srcset="assets/images/hero--smaller.jpg 640w, assets/images/hero--smaller-hi-dpi.jpg 1280w" alt="Coastal view of ocean and mountains">
+            </picture>
+        </picture>
+8.4 - Testes de responsividade de IMG: criar img secundária com o valor de pixels escrito, isso serve para os dois modos.
+

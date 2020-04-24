@@ -1,0 +1,7 @@
+.page-section {
+    padding: 4.735rem 0;
+
+    &--gray {
+        background-color: $grayBackground;
+    }
+}
