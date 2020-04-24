@@ -7,8 +7,13 @@
     font-weight: bold;
     padding: .875rem 1.25rem;
     display: inline-block;
+    
 }
 
 .btn:hover {
     background-color: black;
+}
+
+.btn:focus{
+    outline-style: none;
 }

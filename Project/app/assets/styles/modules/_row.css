@@ -1,0 +1,28 @@
+.row {
+    display: block;
+    overflow: hidden;
+
+    &--5 {
+    
+        @mixin atSmall {
+            float: left;
+            width: 41.66%;
+        }
+    }
+
+    &--6 {
+    
+        @mixin atSmall {
+            float: left;
+            width: 50%;
+        }
+    }
+
+    &--7 {
+    
+        @mixin atSmall {
+            float: left;
+            width: 58.33%;
+            }
+    }
+}
