@@ -1,0 +1,7 @@
+.menu {
+    &__nav {
+        li{
+            display: inline-block;
+        }
+    }
+}

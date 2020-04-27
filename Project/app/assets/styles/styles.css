@@ -8,3 +8,7 @@
 @import 'modules/_wrapper';
 @import 'modules/_row';
 @import 'modules/_about';
+@import 'modules/_menu';
+@import 'modules/_exp';
+@import 'modules/_contact';
+@import 'modules/_copyright';

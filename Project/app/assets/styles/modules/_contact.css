@@ -1,0 +1,62 @@
+.contact {
+
+    &__titlePosition {
+       margin-left: -710px;
+    }
+
+    &__styleInput {
+        width: 263px;
+        height: 30px;
+        margin-top: 60px;
+        border: none;
+        border-bottom: 1px solid $grayTitle; 
+    }
+
+    &__styleMessage {
+        max-width: 604px;
+        width: 533px;
+        height: 134px;
+        margin-top: 40px;
+        margin-bottom: 24px;
+        border: 1px solid $grayTitle;
+        resize: none;
+        line-height: 1.5;
+        padding-top: 0.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        
+    }
+
+    &__styleInput:focus, &__styleMessage:focus{
+        outline-style: none;
+    }
+
+    &__designList {
+        padding-top: 17px;
+        list-style: none;
+        
+        h4 {
+            font-size: 1rem;
+        }
+
+        li {
+            display: inline-block;
+            margin: 3px 1px;
+            font-size: 1rem;
+        }
+
+        ul {
+            margin-left: -43px;
+            margin-bottom: 70px;
+        }
+    }
+
+    &__positionData {
+        line-height: .4rem;
+    }
+    
+    &__positionImg {
+        margin-top: 10px;
+    }
+
+}

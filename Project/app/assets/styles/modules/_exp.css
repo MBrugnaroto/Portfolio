@@ -1,0 +1,31 @@
+.exp {
+    padding-top: 0;
+
+    &__font22 {
+        font-size: 1.375rem;
+        margin-bottom: 10px;
+    }
+
+    &__font18 {
+        font-size: 1.125rem;
+    }
+
+    &__font14 {
+        font-size: .875rem;
+        line-height: 1.6;
+    }
+
+    &__size130 {
+        max-width: 100px;
+    }
+
+    &__position {
+        margin-top: -5px;
+        margin-right: 15px;
+        margin-left: -40px;
+    }
+
+    p {
+        color: $grayTitle;
+    }
+}

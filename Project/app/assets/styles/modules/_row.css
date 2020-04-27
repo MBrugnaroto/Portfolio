@@ -2,6 +2,38 @@
     display: block;
     overflow: hidden;
 
+    &--1 {
+    
+        @mixin atSmall {
+            float: left;
+            width: 8.33%;
+        }
+    }
+
+    &--2 {
+    
+        @mixin atSmall {
+            float: left;
+            width: 16.66%;
+        }
+    }
+
+    &--3 {
+    
+        @mixin atSmall {
+            float: left;
+            width: 25%;
+        }
+    }
+
+    &--4 {
+    
+        @mixin atSmall {
+            float: left;
+            width: 33.33%;
+        }
+    }
+
     &--5 {
     
         @mixin atSmall {
@@ -24,5 +56,9 @@
             float: left;
             width: 58.33%;
             }
+    }
+
+    &--clearFloat {
+        clear: both;
     }
 }
