@@ -1,27 +1,35 @@
 .intro {
-    padding-top: 30%;
+    font-family: 'Montserrat', sans-serif;
+    font-style: bold;
+    font-size: 1.125rem; /* 18px */
+    text-align: center;
+    min-height: 400px;
     
+    @mixin atSmall {
+        text-align: left;
+        min-height: 800px;
+    }
+    
+    &__positionInfo {
+        margin-top: 20%;
+    }
+
     &__wellcome {
-        font-family: 'Montserrat', sans-serif;
-        font-style: bold;
-        font-size: .6rem; /* 16px */
         text-transform: uppercase;
         color: $grayWellcome;
         letter-spacing: .0625‬rem;
-        margin-bottom: -20px;
-
+        margin-bottom: -10px;
+        
         @mixin atSmall {
-            font-size: 1rem;
+            margin-bottom: -20px;
         }
     }
 
     &__name {
-        font-family: 'Montserrat',sans-serif;
-        font-style: bold;
         text-transform: uppercase;
         color: $grayName;
-        font-size: 1rem;
-        margin-bottom: 5px;
+        font-size: 2.125rem;
+        margin-bottom: -5px;
 
         @mixin atSmall {
             font-size: 2.75rem;
@@ -29,15 +37,18 @@
     }
 
     &__description {
-        font-size: .6rem;
+        letter-spacing: 0.02rem;
         color: $grayDescription;
-        max-width: 442px;
-        margin-top: 0px;
         margin-bottom: 33px;
-
+        max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+        
         @mixin atSmall {
-            font-size: 1rem;
+            font-size: 1.125rem;
+            margin-bottom: 33px;
+            max-width: 442px;
+            margin-left: 0px;
         }
     }
-
 }

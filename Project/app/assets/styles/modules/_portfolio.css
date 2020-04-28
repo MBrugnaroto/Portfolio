@@ -1,0 +1,16 @@
+.portfolio {
+    text-align: center;
+
+    &__nav {
+        li{
+            list-style-type: none;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+    }
+
+    ul {
+        margin-left: -40px;
+    }
+}

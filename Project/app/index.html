@@ -9,7 +9,10 @@
     <header class="page-section--gray">
       <div class="wrapper row">
         <div class="row--7">
-          <img src="assets/images/web/icons/logo.svg" alt="logo">
+          <picture>
+            <source srcset="assets/images/web/icons/Logo/Marca-header.png" media="(min-width: 990px)">
+            <img srcset="assets/images/mobile/icons/Marca/Marca-header.png 640w" alt="Imagem introdução">
+          </picture>
         </div>
 
         <nav class="row--5">
@@ -21,22 +24,23 @@
             <li><a href="#testimonials">Contato</a></li>
           </ul>
         </nav>
-  
-        
       </div>
     </header>
-      
+
       <section class="page-section--gray">
-        <div class="wrapper row">
-          <div class="intro row--6">
-              <h5 class="intro__wellcome">OLÁ, MEU NOME É</h5>
+        <div class="wrapper row intro">
+          <div class="row--6 intro__positionInfo">
+              <h5 class="intro__wellcome">Olá, meu nome</h5>
               <h1 class="intro__name">Mateus Brugnaroto</h1>
               <p class="intro__description">Seja bem vindo ao meu portfólio. Sou um engenheiro de
                   software pronto para resolver o seu problema.</p>
               <button class="btn">MEUS TRABALHOS</button>
           </div>
           <div class="row--6">
-              <img class="intro__img" src="assets/Images/web/img/Img-Introducao.png" alt="img-introducao">
+            <picture>
+              <source class="intro__img" srcset="assets/Images/web/img/Introdução/Img-Introducao.png" media="(min-width: 990px)">
+              <img class="intro__img" srcset="assets/images/mobile/img/Introdução/Img-Introducao.png 640w" alt="Imagem introducao">
+            </picture>
           </div>
         </div>
       </section> 
@@ -85,34 +89,34 @@
       </section>
       
       <section class="page-section page-section--gray">
-        <h2>Minhas Experiencias</h2>
-        <div class="exp row wrapper">
+        <div class="wrapper row exp">
+          <h2>Minhas Experiencias</h2>
           <div class="row--6">
             <div class="row--3">
-              <p class="exp__size130 exp__font18">Hut8 - Empresa Júnior da Computação UFPel</p>
-              <p class="exp__font14">2016-2017</p>
+              <p class="exp__size130 exp__company">Hut8 - Empresa Júnior da Computação UFPel</p>
+              <p class="exp__time">2016-2017</p>
             </div>
             <div class="row--1 exp__position">
               <img src="assets/Images/web/icons/check.png" alt="check">
             </div>
             <div class="row--7">
-              <h4 class="exp__font22">Cargo de Associado</h4>
-              <p class="exp__font14">Nesse período, foi desenvolvido o aplicativo Mobile 
+              <h4 class="exp__office">Cargo de Associado</h4>
+              <p class="exp__description">Nesse período, foi desenvolvido o aplicativo Mobile 
                 Pastejando em parceria com a Embrapa, que visava 
                 auxiliar o produtor rural ou técnico extensionista 
                 durante as atividades de planejamento forrageiro 
                 em propriedades rurais</p>
             </div>
-            <div class="row--clearFloat row--3">
-              <p class="exp__font18">Hut8 - Promoção</p>
-              <p class="exp__font14"> 2017-2018</p>
+            <div class="row--3">
+              <p class="exp__company">Hut8 - Promoção</p>
+              <p class="exp__time"> 2017-2018</p>
             </div>
             <div class="row--1 exp__position">
               <img src="assets/Images/web/icons/check.png" alt="check">
             </div>
             <div class="row--7">
-              <h4 class="exp__font22">Cargo de Conselheiro</h4>
-              <p class="exp__font14">Tive como principal função auxiliar o Diretor 
+              <h4 class="exp__office">Cargo de Conselheiro</h4>
+              <p class="exp__description">Tive como principal função auxiliar o Diretor 
                 Financeiro em suas tarefas, ajudar no controle de 
                 fluxo de caixa e na aquisição de novos cursos e 
                 equipamentos para a equipe.</p>
@@ -120,15 +124,15 @@
           </div>
           <div class="row--6">
             <div class="row--3">
-              <p class="exp__font18">Hut8 - Promoção</p>
-              <p class="exp__font14">2018-2019</p>
+              <p class="exp__company">Hut8 - Promoção</p>
+              <p class="exp__time ">2018-2019</p>
             </div>
             <div class="row--1 exp__position">
                 <img src="assets/Images/web/icons/check.png" alt="check">
             </div>
             <div class="row--7">
-              <h4 class="exp__font22">Cargo de Diretor de Gestão de Pessoas</h4>
-              <p class="exp__font14">Tinha como principais funções a organização 
+              <h4 class="exp__office">Cargo de Diretor de Gestão de Pessoas</h4>
+              <p class="exp__description">Tinha como principais funções a organização 
                 do processo de recrutamento de novos candidatos, 
                 gestão dos times para novos  projetos, organização 
                 de reuniões e manutenção da harmonia entre os 
@@ -139,92 +143,95 @@
       </section>
 
       <section class="page-section">
-        <h2>Meu Portfolio</h2>
-        <div class="wrapper">
-          <nav>
-            <ul>
-              <li><a href="#our-beginning">ALL</a></li>
-              <li><a href="#features">WEB</a></li>
-              <li><a href="#testimonials">DESIGN</a></li>
-              <li><a href="#testimonials">NEW</a></li>
-            </ul>
-          </nav>
+        <div class="wrapper row portfolio">
+          <h2>Meu Portfolio</h2>
           <div>
-            <img src="assets/images/web/img/Itens-portfolio.png" alt="Aplicativo pastejando">
+            <nav class="portfolio__nav">
+              <ul>
+                <li><a href="#our-beginning">ALL</a></li>
+                <li><a href="#features">WEB</a></li>
+                <li><a href="#testimonials">DESIGN</a></li>
+                <li><a href="#testimonials">NEW</a></li>
+              </ul>
+            </nav>
+            <div>
+              <img src="assets/images/web/img/Portfólio/Itens-portfolio.png" alt="Aplicativo pastejando">
+            </div>
           </div>
         </div>
       </section>
 
       <section class="page-section page-section--gray">
-        <h2>Meus Serviços</h2>
-        <div class="wrapper">
+        <div class="wrapper row service">
+          <h2>Meus Serviços</h2>
           <div>
-            <p>DESONVOLVEDOR FRONT END</p>
-            <p>Qualidade e agilidade
-              como foco do desenvolvimento</p>
-          </div>
-          <div>
-            <p>UI/UX DESIGN</p>
-            <p>Prioridade na satisfação e
-              opinião do cliente mesclado
-              com modernidade</p>
+            <div class="service__card">
+              <div>
+                <img src="assets/images/web/icons/serviços/Icon-card.png" alt="">
+                <p class="service__sub">DESONVOLVEDOR FRONT END</p>
+                <p>Qualidade e agilidade
+                como foco do desenvolvimento</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="page-section">
-        <h2 class="contact__titlePosition">Entre em Contato</h2>
-        <div class="wrapper">
-          <div class="row--5">
-            <p>Vamos trocar uma ideia, me envie uma mensagem.</p>
-            <div class="row--8">
-              <div class="row--2">
-                <img class="contact__positionImg" src="assets/images/web/icons/contato/Telefone.png" alt="Icone Telefone">
+        <div class="wrapper row contact">
+          <h2 class="contact__titlePosition">Entre em Contato</h2>
+          <div>
+            <div class="row--5">
+              <p>Vamos trocar uma ideia, me envie uma mensagem.</p>
+              <div class="row--8">
+                <div class="row--2 contact__line">
+                  <img class="contact__positionImg" src="assets/images/web/icons/contato/Telefone.png" alt="Icone Telefone">
+                </div>
+                <div class="row--4 contact__positionData contact__line">
+                  <p>Phone</p>
+                  <p>+54 996747479</p>
+                </div>
               </div>
-              <div class="row--4 contact__positionData">
-                <p>Phone</p>
-                <p>+54 996747479</p>
+              <div class="row--clearFloat row--8">
+                <div class="row--2 contact__line">
+                  <img class="contact__positionImg" src="assets/images/web/icons/contato/Email.png" alt="Icone Email">
+                </div>
+                <div class="row--4 contact__positionData contact__line">
+                  <p>Email</p>
+                  <p>brugnaroto@gmail.com</p>
+                </div>
+              </div>
+              <div class="row--clearFloat row--8">
+                <div class="row--2 contact__line">
+                  <img class="contact__positionImg" src="assets/images/web/icons/contato/Localização.png" alt="Icone Localização">
+                </div>
+                <div class="row--7 contact__positionData contact__line">
+                  <p>Endereço</p>
+                  <p>Pelotas, Rio Grande do Sul, Brasil</p>
+                </div>
+              </div>
+              <div class="row--clearFloat contact__designList" >
+                <h4>Redes Sociais:</h4>
+                <ul>
+                  <li><a href="https://www.linkedin.com/in/mateusbrugnaroto" target="_blank"><img src="assets/images/web/icons/contato/Linkedin.png" alt="Icone Linkedin"></a></li>
+                  <li><a href="https://github.com/MBrugnaroto" target="_blank"><img src="assets/images/web/icons/contato/Github.png" alt="Icone Github"></a></li>
+                  <li><a href="https://www.instagram.com/brugnaroto_mateus/" target="_blank"><img src="assets/images/web/icons/contato/Instagram.png" alt="Icone Instagram"></a></li>
+                  <li><a href="https://www.facebook.com/mateus.brugnaroto?ref=bookmarks" target="_blank"><img src="assets/images/web/icons/contato/Facebook.png" alt="Icone Facebook"></a></li>
+                </ul>
               </div>
             </div>
-            <div class="row--clearFloat row--8">
-              <div class="row--2">
-                <img class="contact__positionImg" src="assets/images/web/icons/contato/Email.png" alt="Icone Email">
+            <div class="row--7">
+              <div class="row--6">
+                <input class="contact__styleInput" type="text" placeholder="Seu Nome">
               </div>
-              <div class="row--4 contact__positionData">
-                <p>Email</p>
-                <p>brugnaroto@gmail.com</p>
+              <div class="row--6">
+                <input class="contact__styleInput" type="email" placeholder="Seu Email">
               </div>
-            </div>
-            <div class="row--clearFloat row--8">
-              <div class="row--2">
-                <img class="contact__positionImg" src="assets/images/web/icons/contato/Localização.png" alt="Icone Localização">
+              <div>
+                <textarea class="contact__styleMessage" placeholder="Sua Mensagem" name="Sua Mensagem"></textarea>
               </div>
-              <div class="row--7 contact__positionData">
-                <p>Endereço</p>
-                <p>Pelotas, Rio Grande do Sul, Brasil</p>
-              </div>
+              <button class="btn row--clearFloat">Enviar Mensagem</button>
             </div>
-            <div class="row--clearFloat contact__designList" >
-              <h4>Redes Sociais:</h4>
-              <ul>
-                <li><a href="https://www.linkedin.com/in/mateusbrugnaroto" target="_blank"><img src="assets/images/web/icons/contato/Linkedin.png" alt="Icone Linkedin"></a></li>
-                <li><a href="https://github.com/MBrugnaroto" target="_blank"><img src="assets/images/web/icons/contato/Github.png" alt="Icone Github"></a></li>
-                <li><a href="https://www.instagram.com/brugnaroto_mateus/" target="_blank"><img src="assets/images/web/icons/contato/Instagram.png" alt="Icone Instagram"></a></li>
-                <li><a href="https://www.facebook.com/mateus.brugnaroto?ref=bookmarks" target="_blank"><img src="assets/images/web/icons/contato/Facebook.png" alt="Icone Facebook"></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="row--7">
-            <div class="row--6">
-              <input class="contact__styleInput" type="text" placeholder="Seu Nome">
-            </div>
-            <div class="row--6">
-              <input class="contact__styleInput" type="email" placeholder="Seu Email">
-            </div>
-            <div>
-              <textarea class="contact__styleMessage" placeholder="Sua Mensagem" name="Sua Mensagem"></textarea>
-            </div>
-            <button class="btn row--clearFloat">Enviar Mensagem</button>
           </div>
         </div>
       </section>

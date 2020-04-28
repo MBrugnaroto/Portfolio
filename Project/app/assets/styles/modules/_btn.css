@@ -4,9 +4,14 @@
     border: none;
     border-radius: .625rem;
     font-size: .875rem;
+    padding: .6rem 1rem;
     font-weight: bold;
-    padding: .875rem 1.25rem;
-    display: inline-block;
+    margin-bottom: 20px;
+    
+    @mixin atSmall {
+        font-size: .875rem;
+        padding: .875rem 1.25rem;
+    }
     
 }
 
