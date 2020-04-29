@@ -1,0 +1,72 @@
+.feature-item {
+    position: relative;
+    padding-left: 70px;
+    margin-bottom: 20px;
+
+    &__icon {
+        position: absolute;
+        left: 0;
+    }
+
+    &__text {
+        padding-top: 4px;
+    }
+
+    &__list {
+        margin-left: -43px;
+
+        li {
+            display: inline-block;
+            margin: 3px 1px;
+            font-size: 1rem;
+        }
+    }
+
+    &__title {
+        text-align: left;
+        font-size: 1.375rem;
+
+        @mixin atSmall {
+            font-size: 1.5rem;
+        }
+
+        @mixin atMedium {
+            font-size: 1.875rem;
+        }
+    }
+
+    &__subtitle {
+        padding-top: 20px;
+        font-size: 1.125rem;
+    }
+
+    &__input {
+        width: 100%;
+        height: 40px;
+        border: none; 
+        border-bottom: 1px solid $grayTitle;
+    }
+
+    &__textarea {
+        width: 100%;
+        height: 154px;
+        border: 1px solid $grayTitle;
+        resize: none;
+        line-height: 1.5;
+        padding-top: 0.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    &__input:focus, &__textarea:focus{
+        outline-style: none;
+    }
+
+    &__spacing {
+        margin-bottom: 40px;
+
+        @mixin atSmall {
+            margin-bottom: 0;
+        }
+    }
+}

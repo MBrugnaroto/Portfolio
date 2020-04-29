@@ -2,7 +2,6 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 0.875rem; /* 14px */
     font-weight: normal;
-     
 }
 
 body h2 {
@@ -42,3 +41,7 @@ body h4 {
 body p {
     font-size: 1rem;
 }
+
+* {
+    box-sizing: border-box;
+  }

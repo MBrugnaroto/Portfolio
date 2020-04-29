@@ -2,6 +2,14 @@
     display: block;
     overflow: hidden;
 
+    &--gutters {
+        margin-right: -68px;
+    }
+   
+    &--gutters > div {
+        padding-right: 68px;
+    }
+    
     &--1 {
         @mixin atSmall {
             float: left;
@@ -52,7 +60,23 @@
             }
     }
 
-    &--clearFloat {
-        clear: both;
+    &--12 {
+    
+        @mixin atSmall {
+            float: left;
+            width: 100%;
+            }
+    }
+
+    &--spacing {
+        margin-top: 50px;
+        margin-bottom: 24px;
+    }
+
+    &--spacing__div {
+
+        @mixin atMedium {
+            padding-top: 40px;
+        }
     }
 }
