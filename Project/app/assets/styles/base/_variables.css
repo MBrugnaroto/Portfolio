@@ -1,7 +1,8 @@
 $grayButton: #393939;
-$grayBackground: #ACACAC;
-$grayTitle: #4F4F4F;
+$grayBackground: rgba(238, 238, 238, 30);
+$grayTitle: #494949;
 $grayDescription: #767676;
 $grayWellcome: #919191;
 $grayName: #414141;
 $graySubTitle: #9B9999;
+$grayBorderInput: #D9D9D9;

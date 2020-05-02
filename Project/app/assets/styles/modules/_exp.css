@@ -1,5 +1,4 @@
 .exp {
-    text-align: center;
     
     @mixin atSmall {
         text-align: left;

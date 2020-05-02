@@ -3,6 +3,13 @@
     padding-left: 70px;
     margin-bottom: 20px;
 
+    &__centered {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
     &__icon {
         position: absolute;
         left: 0;
@@ -16,15 +23,25 @@
         margin-left: -43px;
 
         li {
+            list-style-type: none;
             display: inline-block;
             margin: 3px 1px;
             font-size: 1rem;
         }
     }
 
+    &__list--centered {
+        text-align: center;
+    }
+
     &__title {
         text-align: left;
         font-size: 1.375rem;
+        margin-top: 45px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $grayTitle;
 
         @mixin atSmall {
             font-size: 1.5rem;
@@ -33,24 +50,71 @@
         @mixin atMedium {
             font-size: 1.875rem;
         }
+
+        @mixin atLarge {
+            font-size: 2rem;
+        }
+    }
+
+    &__title--centered {
+        text-align: center;
+    }
+    
+
+    &__title:after {
+        content: "";
+        display: block;
+        width: 84px;
+        height: 2px;
+        background: $graySubTitle;
+        margin: 14px auto 10px auto
+    }
+
+    &__title:before {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 2px;
+        background: $graySubTitle;
+        margin: 14px auto -45px auto
     }
 
     &__subtitle {
-        padding-top: 20px;
-        font-size: 1.125rem;
+        font-size: 1rem;
+        font-weight: 700;
+        color: $grayTitle;
+        margin-top: 15px;
+
+        @mixin atSmall {
+            font-size: 1.125rem;
+        }
+
+        @mixin atMedium {
+            font-size: 1.25rem;
+        }
+
+        @mixin atLarge {
+            font-size: 1.375rem;
+        }
     }
 
     &__input {
         width: 100%;
         height: 40px;
         border: none; 
-        border-bottom: 1px solid $grayTitle;
+        border-bottom: 1px solid $grayBorderInput;
+        
+    }
+
+    &__input::placeholder {
+        font-weight: 300;
+        color: $grayWellcome;
     }
 
     &__textarea {
         width: 100%;
         height: 154px;
-        border: 1px solid $grayTitle;
+        border: 1px solid $grayBorderInput;
         resize: none;
         line-height: 1.5;
         padding-top: 0.5rem;
@@ -58,11 +122,19 @@
         padding-right: 1rem;
     }
 
+    &__textarea::placeholder {
+        font-weight: 300;
+        color: $grayWellcome;
+    }
+
+
     &__input:focus, &__textarea:focus{
         outline-style: none;
     }
 
     &__spacing {
+        line-height: .5rem;
+        margin-top: 40px;
         margin-bottom: 40px;
 
         @mixin atSmall {
