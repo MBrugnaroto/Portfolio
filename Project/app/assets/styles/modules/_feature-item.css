@@ -14,8 +14,8 @@
         position: absolute;
         left: 0;
     }
-
-    &__text {
+    
+    &__spacing--top {
         padding-top: 4px;
     }
 
@@ -34,10 +34,29 @@
         text-align: center;
     }
 
+    &__list--font-size {
+        li {
+        font-size: .875rem;
+        
+        @mixin atSmall {
+            font-size: 1rem;
+        }
+    
+        @mixin atMedium {
+            font-size: 1.125rem;
+        }
+    
+        @mixin atLarge {
+            font-size: 1.25rem;
+        }
+    }
+    }
+
     &__title {
         text-align: left;
         font-size: 1.375rem;
         margin-top: 45px;
+        margin-bottom: 60px;
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         text-transform: uppercase;
@@ -109,6 +128,14 @@
     &__input::placeholder {
         font-weight: 300;
         color: $grayWellcome;
+
+        @mixin atSmall {
+            font-size: 0.875rem;
+        }
+
+        @mixin atMedium {
+            font-size: 1rem;
+        }
     }
 
     &__textarea {
@@ -125,6 +152,14 @@
     &__textarea::placeholder {
         font-weight: 300;
         color: $grayWellcome;
+
+        @mixin atSmall {
+            font-size: 0.875rem;
+        }
+
+        @mixin atMedium {
+            font-size: 1rem;
+        }
     }
 
 
@@ -141,4 +176,5 @@
             margin-bottom: 0;
         }
     }
+    
 }

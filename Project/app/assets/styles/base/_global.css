@@ -10,4 +10,17 @@ body {
 
 body p {
     color: $grayDescription;
+    font-size: 1rem;
+    
+    @mixin atSmall {
+        font-size: 1.062rem;
+    }
+
+    @mixin atMedium {
+        font-size: 1.125rem;
+    }
+
+    @mixin atLarge {
+        font-size: 1.18rem;
+    }
 }
