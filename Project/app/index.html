@@ -41,6 +41,7 @@
           <div class="row--small-6">
             <picture>
               <source srcset="assets/Images/web/img/Introdução/Img-Introducao.svg" media="(min-width: 990px)">
+                <source srcset="assets/Images/mobile/img/Introdução/Tablet/Img-Introducao.svg" media="(min-width: 650px)">
               <img srcset="assets/images/mobile/img/Introdução/Img-Introducao.svg 640w" alt="Imagem introducao">
             </picture>
           </div>
@@ -49,10 +50,17 @@
 
       <section class="page-section">
         <div class="wrapper row about">
-          <h2 class="feature-item__title feature-item__title--centered">Sobre Mim</h2>
+          <div class="feature-item__title">
+            <h2 class="feature-item__title--format">Sobre Mim</h2>
+            <div>
+              <div class="feature-item__title--sub--first"></div>
+              <div class="feature-item__title--sub--second"></div>
+            </div>  
+          </div>
+         
           <div class="row--small-7 ">
             <h4 class="feature-item__subtitle">Howdy!</h4>
-            <p class="about__size410">Atualmente, estou buscando me aprimorar na área de desenvolvimento web como programador front end. Então, se tiver interesse em saber
+            <p class="about__size-area">Atualmente, estou buscando me aprimorar na área de desenvolvimento web como programador front end. Então, se tiver interesse em saber
               um pouco mais sobre minhas formações e experiências, é so fazer o download do meu CV logo abaixo e seguir o meu portfólio.
             </p>
             <button class="btn"> Baixe meu CV</button>
@@ -92,7 +100,13 @@
       
       <section class="page-section page-section--gray">
         <div class="wrapper row exp">
-          <h2 class="feature-item__title feature-item__title--centered">Minhas Experiencias</h2>
+          <div class="feature-item__title">
+            <h2 class="feature-item__title--format">Minhas Experiencias</h2>
+            <div>
+              <div class="feature-item__title--sub--first"></div>
+              <div class="feature-item__title--sub--second"></div>
+            </div>  
+          </div>
           <div class="row--small-12 row--small-gutters">
             <div class="row--medium-6">
               <div class="row--medium-3 row--small-4">
@@ -154,7 +168,13 @@
 
       <section class="page-section">
         <div class="wrapper row portfolio">
-          <h2 class="feature-item__title feature-item__title--centered">Meu Portfolio</h2>
+          <div class="feature-item__title">
+            <h2 class="feature-item__title--format">Meu Portfolio</h2>
+            <div>
+              <div class="feature-item__title--sub--first"></div>
+              <div class="feature-item__title--sub--second"></div>
+            </div>  
+          </div>
           <div>
             <nav>
               <ul class="feature-item__list feature-item__list--centered feature-item__list--font-size">
@@ -176,7 +196,13 @@
 
       <section class="page-section page-section--gray">
         <div class="wrapper row service">
-          <h2 class="feature-item__title feature-item__title--centered">Meus Serviços</h2>
+          <div class="feature-item__title">
+            <h2 class="feature-item__title--format">Meus Serviços</h2>
+            <div>
+              <div class="feature-item__title--sub--first"></div>
+              <div class="feature-item__title--sub--second"></div>
+            </div>  
+          </div>
           <div>
             <div class="service__card">
               <div>
@@ -194,24 +220,33 @@
         <div class="wrapper row">
           <div class="row--small-12">
             <div class="row--small-6">
-              <h2 class="feature-item__title">Entre em Contato</h2>
-              <p>Vamos trocar uma ideia, me envie uma mensagem.</p>
+              <div class="feature-item__title feature-item__title--position">
+                <h2 class="feature-item__title--format ">Entre em Contato</h2>
+                <div>
+                  <div class="feature-item__title--sub--first"></div>
+                  <div class="feature-item__title--sub--second"></div>
+                </div>  
+              </div>
+
+              <div class="contact__content">
+                <p>Vamos trocar uma ideia, me envie uma mensagem.</p>
               <div class="feature-item ">
                 <img class="feature-item__icon" src="assets/images/web/icons/contato/Telefone.png" alt="Icone Telefone">
-                <p class="feature-item__spacing--top" ><strong>Phone</strong>  <br> 54 996747479</p>
+                <p><strong>Phone</strong>  <br> 54 996747479</p>
               </div>
 
               <div class="feature-item">
                 <img class="feature-item__icon" src="assets/images/web/icons/contato/Email.png" alt="Icone Email">
-                <p class="feature-item__spacing--top" ><strong>Email</strong> <br> brugnaroto@gmail.com</p>
+                <p><strong>Email</strong> <br> brugnaroto@gmail.com</p>
               </div>
 
               <div class="feature-item">
                 <img class="feature-item__icon" src="assets/images/web/icons/contato/Localização.png" alt="Icone Localização">
-                <p class="feature-item__spacing--top" ><strong>Endereço</strong> <br> Pelotas, Rio Grande do Sul, Brasil</p>
+                <p><strong>Endereço</strong> <br> Pelotas, Rio Grande do Sul, Brasil</p>
               </div>
-
-              <div class="feature-item__spacing">
+              </div>
+              
+              <div class="contact__spacing--social-midia">
                 <h4 class="feature-item__subtitle">Redes Sociais:</h4>
                 <ul class="feature-item__list">
                   <li><a href="https://www.linkedin.com/in/mateusbrugnaroto" target="_blank"><img src="assets/images/web/icons/contato/Linkedin.png" alt="Icone Linkedin"></a></li>
@@ -223,20 +258,20 @@
             </div>
 
             <div class="row--small-6">
-              <div class="row--spacing">
+              <div class="contact__message--spacing">
                 <div class="row--small-12 row--gutters">
-                  <div class="row--small-6">
+                  <div class="row--small-6 ">
                     <input class="feature-item__input" type="text" placeholder="Seu Nome">
                   </div>
                   <div class="row--small-6">
                     <input class="feature-item__input" type="email" placeholder="Seu Email">
                   </div>
                 </div>
-                <div class="row--small-12 row--spacing row--gutters">
-                  <div>
+
+                <div class="row--small-12 row--gutters">
+                  <div class="contact__message--spacing--textarea">
                     <textarea class="feature-item__textarea" placeholder="Sua Mensagem" name="Sua Mensagem"></textarea>
                   </div>
-
                 </div>
                 <button class="btn">Enviar Mensagem</button>
               </div>

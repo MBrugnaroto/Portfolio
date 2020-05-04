@@ -14,10 +14,6 @@
         position: absolute;
         left: 0;
     }
-    
-    &__spacing--top {
-        padding-top: 4px;
-    }
 
     &__list {
         margin-left: -43px;
@@ -53,49 +49,53 @@
     }
 
     &__title {
+        line-height: 0;
+        margin-bottom: 60px;
+    }
+
+    &__title--format {
         text-align: left;
         font-size: 1.375rem;
-        margin-top: 45px;
-        margin-bottom: 60px;
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         text-transform: uppercase;
         color: $grayTitle;
+        text-align: center;
 
         @mixin atSmall {
             font-size: 1.5rem;
         }
-
+    
         @mixin atMedium {
             font-size: 1.875rem;
         }
-
+    
         @mixin atLarge {
             font-size: 2rem;
         }
     }
 
-    &__title--centered {
-        text-align: center;
-    }
-    
+    &__title--position {
 
-    &__title:after {
-        content: "";
-        display: block;
-        width: 84px;
-        height: 2px;
-        background: $graySubTitle;
-        margin: 14px auto 10px auto
+        @mixin atSmall {
+            display: inline-block;
+            justify-content: left;
+            margin-bottom: 40px;
+        }
     }
 
-    &__title:before {
-        content: "";
-        display: block;
+    &__title--sub--first {
         width: 30px;
         height: 2px;
-        background: $graySubTitle;
-        margin: 14px auto -45px auto
+        margin: 0 auto;
+        background: $graySubTitle none repeat scroll 0 0;
+    }
+
+    &__title--sub--second {
+        width: 84px;
+        height: 2px;
+        margin: 5px auto;
+        background: $graySubTitle none repeat scroll 0 0;
     }
 
     &__subtitle {
@@ -162,19 +162,7 @@
         }
     }
 
-
     &__input:focus, &__textarea:focus{
         outline-style: none;
     }
-
-    &__spacing {
-        line-height: .5rem;
-        margin-top: 40px;
-        margin-bottom: 40px;
-
-        @mixin atSmall {
-            margin-bottom: 0;
-        }
-    }
-    
 }

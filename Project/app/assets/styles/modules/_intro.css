@@ -14,6 +14,10 @@
         @mixin atSmall {
             height: 650px;
         }
+
+        @mixin atMedium {
+            height: 750px;
+        }
         /*Centralizando elementros da div */
         display: flex;
         flex-direction: row;

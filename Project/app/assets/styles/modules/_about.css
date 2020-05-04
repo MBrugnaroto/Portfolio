@@ -9,11 +9,22 @@
         margin-bottom: 10px;
     }
 
-    &__size410 {
-        max-width: 410px;
+    &__size-area {
         line-height: 1.7;
         margin-top: 15px;
-        margin-bottom: 10%;        
+        margin-bottom: 10%;
+        
+        @mixin atSmall {
+            max-width: 360px;
+        }
+
+        @mixin atMedium {
+            max-width: 410px;
+        }
+
+        @mixin atLarge {
+            max-width: 510px;
+        }
     }
 
     &__designList {

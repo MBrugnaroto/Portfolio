@@ -61,14 +61,5 @@
         }
     }
 
-    &--spacing {
-        margin-top: 50px;
-        margin-bottom: 24px;
-    }
-
-    &--spacing__div {
-        @mixin atMedium {
-            padding-top: 40px;
-        }
-    }
+ 
 }
