@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="49" height="45" viewBox="0 0 49 45">
+  <g id="Linkedin" transform="translate(-341 -4640)">
+    <g id="Linkedin-2" data-name="Linkedin" transform="translate(341 4640)" fill="#fff" stroke="#707070" stroke-width="1">
+      <ellipse cx="24.5" cy="22.5" rx="24.5" ry="22.5" stroke="none"/>
+      <ellipse cx="24.5" cy="22.5" rx="24" ry="22" fill="none"/>
+    </g>
+    <g id="Icone-linkedin" transform="translate(226.7 4478)">
+      <path id="XMLID_195_" d="M126.761,211.226h5.908v16.547h-5.908ZM129.726,203a3.013,3.013,0,1,1-3.426,2.984A3.232,3.232,0,0,1,129.726,203" transform="translate(0 -33.109)" fill="#4f4f4f"/>
+      <path id="XMLID_192_" d="M218.1,285.221h5.306V287.6h.072a5.851,5.851,0,0,1,5.244-2.8c5.6,0,6.645,3.591,6.645,8.265v9.509h-5.532v-8.435c0-2.016-.031-4.6-2.874-4.6-2.885,0-3.317,2.2-3.317,4.453v8.586H218.11l-.01-17.352Z" transform="translate(-82.325 -107.91)" fill="#4f4f4f"/>
+    </g>
+  </g>
+</svg>

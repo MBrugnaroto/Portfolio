@@ -1,0 +1,25 @@
+.primary-nav {
+    
+
+    ul {
+        text-align: right;
+        margin: 0;
+        padding: 0;
+        padding-right: 50px;
+
+    }
+
+    li {
+        display: inline-block;
+        list-style: none;
+        padding-right: 40px;
+    }
+
+    a {
+        color: $grayTitle;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: .875rem;
+        font-weight: 500;
+    }
+}

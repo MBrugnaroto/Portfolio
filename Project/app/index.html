@@ -6,32 +6,34 @@
     <title>Document</title>
 </head>
 <body>
-    <header class="page-section--gray">
-      <div class="wrapper row">
-        <div class="row--small-7 ">
+    <header class="page-section--gray site-header">
+      <div class="wrapper">
+        <div class="site-header__logo">
           <picture>
             <source srcset="assets/images/web/icons/Logo/Marca-header.png" media="(min-width: 990px)">
-            <img srcset="assets/images/mobile/icons/Marca/Marca-header.png 640w" alt="Imagem introdução">
+            <img srcset="assets/images/mobile/icons/Marca/Marca-header.svg 640w" alt="Imagem introdução">
           </picture>
         </div>
-
-        <nav class="row--small-5">
-          <ul class="menu__nav">
-            <li><a href="">Home</a></li>
-            <li><a href="">Sobre</a></li>
-            <li><a href="">Portfolio</a></li>
-            <li><a href="">Serviços</a></li>
-            <li><a href="">Contato</a></li>
-          </ul>
-        </nav>
+        <div class="site-header__menu-icon"></div>
+        <div class="site-header__menu-content">
+          <nav class="primary-nav">
+            <ul>
+              <li><a href="">Home</a></li>
+              <li><a href="">Sobre</a></li>
+              <li><a href="">Portfolio</a></li>
+              <li><a href="">Serviços</a></li>
+              <li><a href="">Contato</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
-    </header>
+  </header>
 
       <section class="page-section--gray">
         <div class="wrapper row intro">
           <div class="row--small-6 intro__positionInfo">
             <div>
-              <h5 class="intro__wellcome">Olá, meu nome</h5>
+              <h5 class="intro__wellcome">Olá, meu nome é</h5>
               <h1 class="intro__name">Mateus Brugnaroto</h1>
               <p class="intro__description">Seja bem vindo ao meu portfólio. Sou um engenheiro de
                   software pronto para resolver o seu problema.</p>
@@ -107,6 +109,7 @@
               <div class="feature-item__title--sub--second"></div>
             </div>  
           </div>
+
           <div class="row--small-12 row--small-gutters">
             <div class="row--medium-6">
               <div class="row--medium-3 row--small-4">
@@ -135,11 +138,12 @@
                 <img class="exp__img" src="assets/Images/web/icons/check.png" alt="check">
               </div>
               <div class="row--small-7 ">
-                <h4 class="exp__office">Cargo de Conselheiro</h4>
-                <p class="exp__description">Tive como principal função auxiliar o Diretor 
-                  Financeiro em suas tarefas, ajudar no controle de 
-                  fluxo de caixa e na aquisição de novos cursos e 
-                  equipamentos para a equipe.</p>
+                <h4 class="exp__office">Cargo de Diretor de Gestão de Pessoas</h4>
+                <p class="exp__description">Tinha como principais funções a organização 
+                  do processo de recrutamento de novos candidatos, 
+                  gestão dos times para novos  projetos, organização 
+                  de reuniões e manutenção da harmonia entre os 
+                  integrantes da empresa.</p>
               </div>
             </div>
           </div>
@@ -154,12 +158,11 @@
                   <img class="exp__img" src="assets/Images/web/icons/check.png" alt="check">
               </div>
               <div class="row--small-7 ">
-                <h4 class="exp__office">Cargo de Diretor de Gestão de Pessoas</h4>
-                <p class="exp__description">Tinha como principais funções a organização 
-                  do processo de recrutamento de novos candidatos, 
-                  gestão dos times para novos  projetos, organização 
-                  de reuniões e manutenção da harmonia entre os 
-                  integrantes da empresa.</p>
+                <h4 class="exp__office">Cargo de Conselheiro</h4>
+                <p class="exp__description">Tive como principal função auxiliar o Diretor 
+                  Financeiro em suas tarefas, ajudar no controle de 
+                  fluxo de caixa e na aquisição de novos cursos e 
+                  equipamentos para a equipe.</p>
               </div>
             </div>
           </div>
@@ -176,8 +179,8 @@
             </div>  
           </div>
           <div>
-            <nav>
-              <ul class="feature-item__list feature-item__list--centered feature-item__list--font-size">
+            <nav class="portfolio__list ">
+              <ul>
                 <li><a href="">ALL</a></li>
                 <li><a href="">WEB</a></li>
                 <li><a href="">DESIGN</a></li>
@@ -206,10 +209,10 @@
           <div>
             <div class="service__card">
               <div>
-                <img src="assets/images/web/icons/serviços/Icon-card.png" alt="">
+                <img src="assets/images/web/icons/serviços/Front-end.svg" alt="Icone do serviço de front-end">
                 <p class="service__sub">DESONVOLVEDOR FRONT END</p>
-                <p>Qualidade e agilidade
-                como foco do desenvolvimento</p>
+                <p class="service__description">Qualidade e agilidade
+                como foco no desenvolvimento</p>
               </div>
             </div>
           </div>
@@ -231,17 +234,17 @@
               <div class="contact__content">
                 <p>Vamos trocar uma ideia, me envie uma mensagem.</p>
               <div class="feature-item ">
-                <img class="feature-item__icon" src="assets/images/web/icons/contato/Telefone.png" alt="Icone Telefone">
+                <img class="feature-item__icon" src="assets/images/web/icons/contato/Telefone.svg" alt="Icone Telefone">
                 <p><strong>Phone</strong>  <br> 54 996747479</p>
               </div>
 
               <div class="feature-item">
-                <img class="feature-item__icon" src="assets/images/web/icons/contato/Email.png" alt="Icone Email">
+                <img class="feature-item__icon" src="assets/images/web/icons/contato/Email.svg" alt="Icone Email">
                 <p><strong>Email</strong> <br> brugnaroto@gmail.com</p>
               </div>
 
               <div class="feature-item">
-                <img class="feature-item__icon" src="assets/images/web/icons/contato/Localização.png" alt="Icone Localização">
+                <img class="feature-item__icon" src="assets/images/web/icons/contato/Localização.svg" alt="Icone Localização">
                 <p><strong>Endereço</strong> <br> Pelotas, Rio Grande do Sul, Brasil</p>
               </div>
               </div>
@@ -249,10 +252,10 @@
               <div class="contact__spacing--social-midia">
                 <h4 class="feature-item__subtitle">Redes Sociais:</h4>
                 <ul class="feature-item__list">
-                  <li><a href="https://www.linkedin.com/in/mateusbrugnaroto" target="_blank"><img src="assets/images/web/icons/contato/Linkedin.png" alt="Icone Linkedin"></a></li>
-                  <li><a href="https://github.com/MBrugnaroto" target="_blank"><img src="assets/images/web/icons/contato/Github.png" alt="Icone Github"></a></li>
-                  <li><a href="https://www.instagram.com/brugnaroto_mateus/" target="_blank"><img src="assets/images/web/icons/contato/Instagram.png" alt="Icone Instagram"></a></li>
-                  <li><a href="https://www.facebook.com/mateus.brugnaroto?ref=bookmarks" target="_blank"><img src="assets/images/web/icons/contato/Facebook.png" alt="Icone Facebook"></a></li>
+                  <li><a href="https://www.linkedin.com/in/mateusbrugnaroto" target="_blank"><img src="assets/images/web/icons/contato/Linkedin.svg" alt="Icone Linkedin"></a></li>
+                  <li><a href="https://github.com/MBrugnaroto" target="_blank"><img src="assets/images/web/icons/contato/Github.svg" alt="Icone Github"></a></li>
+                  <li><a href="https://www.instagram.com/brugnaroto_mateus/" target="_blank"><img src="assets/images/web/icons/contato/Instagram.svg" alt="Icone Instagram"></a></li>
+                  <li><a href="https://www.facebook.com/mateus.brugnaroto?ref=bookmarks" target="_blank"><img src="assets/images/web/icons/contato/Facebook.svg" alt="Icone Facebook"></a></li>
                 </ul>
               </div>
             </div>

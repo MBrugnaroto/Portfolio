@@ -1,5 +1,4 @@
 .about {
-    
     @mixin atSmall {
         text-align: left;
     }
