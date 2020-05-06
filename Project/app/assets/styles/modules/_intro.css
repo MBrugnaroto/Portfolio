@@ -9,26 +9,24 @@
     }
     
     &__positionInfo {
-        height: 300px;
-        
-        @mixin atSmall {
-            height: 650px;
-        }
-
-        @mixin atMedium {
-            height: 750px;
-        }
+        padding-top: 30px;
+        padding-bottom: 260px;
         /*Centralizando elementros da div */
+
+        @mixin atSmall {
+            height: 750px;
+            
+        }
         display: flex;
         flex-direction: row;
-        justify-content: center;
         align-items: center;
     }
 
+
     &__wellcome {
+        letter-spacing: 0.15rem;
         text-transform: uppercase;
         color: $grayWellcome;
-        letter-spacing: .0625‬rem;
         margin-bottom: -10px;
         
         @mixin atSmall {
@@ -49,6 +47,7 @@
 
     &__description {
         letter-spacing: 0.02rem;
+        line-height: 1.5rem;
         color: $grayDescription;
         margin-bottom: 33px;
         max-width: 280px;
@@ -60,6 +59,17 @@
             margin-bottom: 33px;
             max-width: 442px;
             margin-left: 0px;
+        }
+    }
+
+    &__img {
+        picture {
+            display: none;
+        }
+        @mixin atSmall {
+            picture {
+                display: block;
+            }
         }
     }
 }

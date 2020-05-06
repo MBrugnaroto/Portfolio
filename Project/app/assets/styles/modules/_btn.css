@@ -1,16 +1,18 @@
 .btn {
-    background-color: $grayButton;
-    color:#ffffff;
-    border: none;
-    border-radius: .625rem;
     font-size: .875rem;
-    padding: .6rem 1rem;
+    text-transform: uppercase;
     font-weight: bold;
+    color:#ffffff;
+    background-color: $grayButton;
+    border: none;
+    border-radius: .725rem;
+    padding: .7rem 1.2rem;
     margin-bottom: 20px;
     
+    
+
     @mixin atSmall {
-        font-size: .875rem;
-        padding: .875rem 1.25rem;
+        padding: .875rem 1.35rem;
     }
     
 }

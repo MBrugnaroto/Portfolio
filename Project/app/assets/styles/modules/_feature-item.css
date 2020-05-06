@@ -24,6 +24,7 @@
             margin: 3px 1px;
             font-size: 1rem;
         }
+        
     }
 
     &__list--centered {
@@ -55,7 +56,7 @@
 
     &__title--format {
         text-align: left;
-        font-size: 1.375rem;
+        font-size: 1.285rem;
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         text-transform: uppercase;
@@ -67,11 +68,11 @@
         }
     
         @mixin atMedium {
-            font-size: 1.875rem;
+            font-size: 1.75rem;
         }
     
         @mixin atLarge {
-            font-size: 2rem;
+            font-size: 1.875rem;
         }
     }
 
