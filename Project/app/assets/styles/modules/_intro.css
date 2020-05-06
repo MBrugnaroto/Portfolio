@@ -9,18 +9,14 @@
     }
     
     &__positionInfo {
-        height: 650px;
-        margin-top: -100px;
+        padding-top: 30px;
+        padding-bottom: 260px;
+        /*Centralizando elementros da div */
 
         @mixin atSmall {
-            margin-top: -50px;
-            height: 650px;
-        }
-
-        @mixin atMedium {
             height: 750px;
+            
         }
-        /*Centralizando elementros da div */
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -66,10 +62,14 @@
         }
     }
 
-    img {
-        display: none;
+    &__img {
+        picture {
+            display: none;
+        }
         @mixin atSmall {
-            display: block;
+            picture {
+                display: block;
+            }
         }
     }
 }

@@ -5,11 +5,14 @@
         margin: 0;
         padding: 0;
 
+        @mixin atSmall {
+            padding-left: 50px;
+        }
+
         @mixin atMedium {
             text-align: right;
             padding-right: 50px;
         }
-
     }
 
     li {
@@ -42,11 +45,11 @@
     }
 
     a {
-        color: $grayTitle;
+        color: rgba($grayTitle, .7);
         text-decoration: none;
         text-transform: uppercase;
         font-size: .765rem;
-        font-weight: 500;
+        letter-spacing: 0.1rem;
         padding: 3px 10px;
         background-color: rgba($grayTitle, .1);
         border-radius: .400rem;border-radius: .400rem;
@@ -57,6 +60,38 @@
             box-shadow: none;
             padding: 0;
             background-color: transparent;
+            font-size: .875rem;
         }
     }
+
+    &__link{
+        position: relative;
+    }
+      
+    &__link:after{
+        content: '';
+        position: absolute;
+        width: 0; height: 3px;
+        display: block;
+        margin-top: -11px;
+        margin-left: -10px;
+        left: 0;
+        background: rgba($grayTitle, .5);
+        transition: width .4s ease;
+        border-radius: .500rem;
+      }
+       
+    &__link:hover:after{
+        display: none;
+
+        @mixin atMedium {
+            display: block;
+            width: 100%;
+            padding-right: 19px;
+            right: 0;
+            background: rgba($grayTitle, .5);
+        }
+       
+      }
+
 }
