@@ -2,19 +2,7 @@
     position: relative;
     padding-left: 70px;
     margin-bottom: 20px;
-
-    &__centered {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-
-    &__icon {
-        position: absolute;
-        left: 0;
-    }
-
+    
     &__list {
         margin-left: -43px;
 
@@ -33,88 +21,19 @@
 
     &__list--font-size {
         li {
-        font-size: .875rem;
+            font-size: .875rem;
+            
+            @mixin atSmall {
+                font-size: 1rem;
+            }
         
-        @mixin atSmall {
-            font-size: 1rem;
-        }
-    
-        @mixin atMedium {
-            font-size: 1.125rem;
-        }
-    
-        @mixin atLarge {
-            font-size: 1.25rem;
-        }
-    }
-    }
-
-    &__title {
-        line-height: 0;
-        margin-bottom: 60px;
-    }
-
-    &__title--format {
-        text-align: left;
-        font-size: 1.285rem;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: $grayTitle;
-        text-align: center;
-
-        @mixin atSmall {
-            font-size: 1.5rem;
-        }
-    
-        @mixin atMedium {
-            font-size: 1.75rem;
-        }
-    
-        @mixin atLarge {
-            font-size: 1.875rem;
-        }
-    }
-
-    &__title--position {
-
-        @mixin atSmall {
-            display: inline-block;
-            justify-content: left;
-            margin-bottom: 40px;
-        }
-    }
-
-    &__title--sub--first {
-        width: 30px;
-        height: 2px;
-        margin: 0 auto;
-        background: $graySubTitle none repeat scroll 0 0;
-    }
-
-    &__title--sub--second {
-        width: 84px;
-        height: 2px;
-        margin: 5px auto;
-        background: $graySubTitle none repeat scroll 0 0;
-    }
-
-    &__subtitle {
-        font-size: 1rem;
-        font-weight: 700;
-        color: $grayTitle;
-        margin-top: 15px;
-
-        @mixin atSmall {
-            font-size: 1.125rem;
-        }
-
-        @mixin atMedium {
-            font-size: 1.25rem;
-        }
-
-        @mixin atLarge {
-            font-size: 1.375rem;
+            @mixin atMedium {
+                font-size: 1.125rem;
+            }
+        
+            @mixin atLarge {
+                font-size: 1.25rem;
+            }
         }
     }
 

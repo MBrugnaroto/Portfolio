@@ -1,6 +1,5 @@
 .contact {
     &__content {
-
         @mixin atSmall {
             max-width: 300px;
         }
@@ -8,8 +7,19 @@
         @mixin atMedium {
             max-width: 100%;
         }
-        
     }
+
+    &__content--data {
+        position: relative;
+        padding-left: 70px;
+        margin-bottom: 20px;
+    }
+
+    &__content--data--icon {
+        position: absolute;
+        left: 0;
+    }
+
     &__message--spacing {
         @mixin atSmall {
             margin-top: 125px;

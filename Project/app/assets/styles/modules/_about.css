@@ -3,11 +3,10 @@
         text-align: left;
     }
 
-    &__font22 {
-        font-size: 1.375rem;
-        margin-bottom: 10px;
+    &__spacing-foco {
+        margin-bottom: 40px;
     }
-
+    
     &__size-area {
         line-height: 1.7;
         margin-top: 15px;

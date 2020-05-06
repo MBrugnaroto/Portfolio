@@ -1,5 +1,5 @@
 .primary-nav {
-
+    
     ul {
         text-align: center;
         margin: 0;
@@ -55,12 +55,15 @@
         border-radius: .400rem;border-radius: .400rem;
         box-shadow:  0px 5px 12px 0px rgba(0, 0, 0, 0.2);
 
+        @mixin atSmall {
+            font-size: .875rem;
+        }
+
         @mixin atMedium {
             border: none;
             box-shadow: none;
             padding: 0;
             background-color: transparent;
-            font-size: .875rem;
         }
     }
 
@@ -91,7 +94,6 @@
             right: 0;
             background: rgba($grayTitle, .5);
         }
-       
-      }
+    }
 
 }
