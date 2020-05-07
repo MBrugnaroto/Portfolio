@@ -1,6 +1,6 @@
 .row {
-    display: block;
-    overflow: hidden;
+   
+    @mixin clearfix;
 
     &--small-gutters {
         margin-right: -10px;

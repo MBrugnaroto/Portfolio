@@ -3,8 +3,21 @@
     transition: opacity 1.5s ease-out, transform 1s ease-out;
     transform: scale(1.15);
 
-    &--is-visible {
+    &--is-visible-exp {
         opacity: 1;
         transform: scale(1);
     }
+
+    &--is-visible-service {
+        opacity: 1;
+        position: relative;
+        animation-name: myfirst;
+        animation-duration: 1.5s;
+        transform: scale(1);
+    }
+
+    @keyframes myfirst {
+        0%    { left: 200px; }
+        100%  { left: 0px; }
+      }
 }
