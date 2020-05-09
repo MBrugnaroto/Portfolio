@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="utf-8">
     <title>Mateus Brugnaroto - Desenvolvedor de software</title>
     <meta name="description" content="Desenvolvedor de software com formação em engenharia da computação. Foco no desenvolvimento do front end 
@@ -18,32 +18,35 @@
 
 </head>
 <body>
-    <header class="page-section--gray site-header">
-      <div class="wrapper">
-        <div class="site-header">
-          <div class="site-header__logo">
-            <picture>
-              <source srcset="assets/images/web/icons/Logo/Marca-header.svg" media="(min-width: 990px)">
-              <img srcset="assets/images/mobile/icons/Marca/Marca-header.svg 640w" alt="Imagem introdução">
-            </picture>
+        <header class="page-section--gray site-header">
+          <div class="wrapper">
+            <div class="site-header">
+              <div class="site-header__logo">
+                <a href="">
+                  <picture>
+                    <source srcset="assets/images/web/icons/Logo/Marca-header.svg" media="(min-width: 990px)">
+                    <img srcset="assets/images/mobile/icons/Marca/Marca-header.svg 640w" alt="Imagem introdução">
+                  </picture>
+                </a>
+              </div>
+              <div class="site-header__menu-icon">
+                <div class="site-header__menu-icon__middle"></div>
+              </div>
+              <div class="site-header__menu-content">
+                <nav class="primary-nav">
+                  <ul>
+                    <li><a href="" class="primary-nav__link">Home</a></li>
+                    <li><a href="" class="primary-nav__link">Sobre</a></li>
+                    <li><a href="" class="primary-nav__link">Portfolio</a></li>
+                    <li><a href="" class="primary-nav__link">Serviços</a></li>
+                    <li><a href="" class="primary-nav__link">Contato</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
           </div>
-          <div class="site-header__menu-icon">
-            <div class="site-header__menu-icon__middle"></div>
-          </div>
-          <div class="site-header__menu-content">
-            <nav class="primary-nav">
-              <ul>
-                <li><a class="primary-nav__link">Home</a></li>
-                <li><a class="primary-nav__link">Sobre</a></li>
-                <li><a class="primary-nav__link">Portfolio</a></li>
-                <li><a class="primary-nav__link">Serviços</a></li>
-                <li><a class="primary-nav__link">Contato</a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
-  </header>
+      </header>
+      
       <!--Introdução -->
       <section class="page-section--gray">
         <div class="wrapper row intro">
@@ -183,9 +186,6 @@
                   integrantes da empresa.</p>
               </div>
             </div>
-
-            
-            
           </div>
 
         </div>
@@ -202,22 +202,43 @@
               <div class="title__sub-second"></div>
             </div>  
           </div>
-          <div>
-            <div class="portfolio__list">
-              <nav class="primary-nav">
-                <ul>
-                  <li><a class="primary-nav__link">ALL</a></li>
-                  <li><a class="primary-nav__link">WEB</a></li>
-                  <li><a class="primary-nav__link">DESIGN</a></li>
-                  <li><a class="primary-nav__link">NEW</a></li>
-                </ul>
-              </nav>
-            </div>
-            <div class="portfolio__centered">
-              <picture>
-                <source srcset="assets/images/web/img/Portfólio/Itens-portfolio.svg" media="(min-width: 990px)">
-                <img srcset="assets/images/mobile/img/Portfolio/Itens-portfolio.svg 640w" alt="Aplicativo pastejando">
-              </picture>
+            
+          <div class="portfolio__list">
+            <nav class="primary-nav">
+              <ul>
+                <li><a href="" class="primary-nav__link">ALL</a></li>
+                <li><a href="" class="primary-nav__link">WEB</a></li>
+                <li><a href="" class="primary-nav__link">DESIGN</a></li>
+                <li><a href="" class="primary-nav__link">NEW</a></li>
+              </ul>
+            </nav>
+          </div>
+
+
+          <div class="portfolio__projects row--small-12 row--medium-gutters">
+            <div class="portfolio__project-container row--3 row--medium-5 row--large-3">
+              <div class="portfolio__project--img">
+                <picture>
+                  <source srcset="assets/images/web/img/Portfólio/Itens-portfolio.svg" media="(min-width: 1020px)">
+                  <source srcset="assets/images/web/img/Portfólio/Itens-portfolio-tablet.svg " media="(min-width: 700px)">
+                  <img srcset="assets/images/web/img/Portfólio/Itens-portfolio-mobile.svg" alt="Our founder, Jane Doe">
+                </picture>
+              </div>
+              <div class="portfolio__project--view">
+                <div>
+                  <a href="">
+                    <picture>
+                      <source srcset="assets/images/web/icons/Portfolio/icon.svg" media="(min-width: 1020px)">
+                      <source srcset="assets/images/web/icons/Portfolio/icon-tablet.svg" media="(min-width: 700px)">
+                      <img srcset="assets/images/web/icons/Portfolio/icon-mobile.svg" alt="Our founder, Jane Doe">
+                    </picture>
+                  </a>
+                </div>
+              </div>
+              <div class="portfolio__project--info">
+                <div class="portfolio__project--info-name">Pastejando</div>
+                <div class="portfolio__project--info-type">Aplicativo</div>
+              </div>
             </div>
           </div>
         </div>

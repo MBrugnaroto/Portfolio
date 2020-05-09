@@ -23,12 +23,18 @@
         background-color: $grayBackground;
         box-shadow:  1px 5px 12px 0px rgba(0, 0, 0, 0.2);
         margin-top: 0;
+        transition: 0.1s ease-out;
+        transform: scale(1);
 
         /*Centralizando elementros da div */
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;  
+    }
+
+    &__card:hover {
+        transform: scale(1.05);
     }
 
     &__sub {
