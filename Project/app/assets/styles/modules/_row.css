@@ -1,29 +1,61 @@
 .row {
-    display: block;
-    overflow: hidden;
+   
+    @mixin clearfix{};
 
     &--small-gutters {
-        margin-right: -10px;
+        @mixin atMedium {
+            margin-right: -10px;
+        }
+        
     }
    
     &--small-gutters > div {
-        padding-right: 10px;
+        @mixin atMedium {
+            padding-right: 10px;
+        } 
+    }
+
+    &--medium-gutters {
+        @mixin atMedium {
+            padding-right: -20px;
+        }
+        
+    }
+   
+    &--medium-gutters > div {
+        @mixin atMedium {
+            margin-right: 20px;
+        } 
     }
 
     &--gutters {
-        margin-right: -68px;
+        @mixin atMedium {
+            margin-right: -68px;
+        }
     }
    
     &--gutters > div {
-        padding-right: 68px;
+        @mixin atMedium {
+            padding-right: 68px;
+        }   
     }
-    
+
     &--1 {
         float: left;
         width: 11%;
     }
 
+    &--3 {
+        float: left;
+        width: 100%;
+    }
+
     @mixin atSmall {
+        &--small-3 {
+            float: left;
+            width: 33%;
+        }
+
         &--small-4 {
             float: left;
             width: 33.33%;
@@ -55,9 +87,27 @@
             float: left;
             width: 25%;
         }
+
+        &--medium-4 {
+            float: left;
+            width: 32%;
+        }
+
+        &--medium-5 {
+            float: left;
+            width: 40%;
+        }
+
         &--medium-6 {
             float: left;
             width: 50%;
+        }
+    }
+
+    @mixin atLarge {
+        &--large-3 {
+            float: left;
+            width: 33%;
         }
     }
 

@@ -177,3 +177,240 @@
         </picture>
 8.4 - Testes de responsividade de IMG: criar img secundária com o valor de pixels escrito, isso serve para os dois modos.
 
+
+9 - MELHORAR O DESEMPENHO DE FUNÇÕES JAVASCRIPT
+9.1 - Para melhorar a performace do projeto em relação ao javaScript, fazendo com que o browser não sejá forçado a realizar funções não tão necessárias, 
+      podemos usar o package lodash
+9.1.1 - npm install lodash //Como vamos querer que esse pacote seja importado para o nosso projeto, não utilizamos --save-dev
+9.1.2 - No arquivo JS, importamos do pacote a função que desejamos.
+9.1.2.1 - EX: Queremos que o browser fique monitorando o scroll dá pagina, mas não queremos que ele faça isso a cada pixel da tela, pois seria muito ineficiente,
+              assim utilizamos a função throttle (acelerador) que nos permite dar um timer das chamadas conforme o listener escuta um scroll.
+
+              import throttle from 'lodash/throttle'
+
+              class RevealOnScroll {
+                    constructor () {
+                        this.itemsToReveal = document.querySelectorAll(".exp")
+                        this.scrollThrottle = throttle(this.calcCaller, 200).bind(this) //Chama a funcção calcCaller a cada 200 millisegundos
+                        this.events();
+                    }
+
+                    events() {
+                        window.addEventListener("scroll", this.scrollThrottle) //Vai escutando o scroll e chama a função scrollThrottle
+                    }
+
+                    calcCaller() {
+                        console.log("Scroll function ran")
+                        this.itemsToReveal.forEach(el => {
+                            this.calculateIfScrolledTo(el)
+                        })
+                    }
+                    calculateIfScrolledTo(el) {
+                        let scrollPercent = (el.getBoundingClientRect().top / window.innerHeight) * 100
+                        if (scrollPercent < 75) {
+                            el.classList.add("reveal-item--is-visible")
+                        }
+                    }
+                }
+                export default RevealOnScroll;
+9.1.2.2 - EX2: Para melhorar ainda mais a performace, podemos notar que a funcao calculateIfScrolledTo é chamada mesmo depois de ter encontrado o elemento, para que isso não   
+               ocorra mais, é so adicionarmos um atributo de verificacao em nossa classe.
+
+                import throttle from 'lodash/throttle'
+
+                class RevealOnScroll {
+                    constructor () {
+                        this.itemsToReveal = document.querySelectorAll(".exp")
+                        this.hideInitially();                                       //Função para adicionar uma classe ao nosso elemento
+                        this.scrollThrottle = throttle(this.calcCaller, 200).bind(this)
+                        this.events();
+                    }
+
+                    events() {
+                        window.addEventListener("scroll", this.scrollThrottle)
+                    }
+
+                    calcCaller() {
+                        console.log("Scroll function ran")
+                        this.itemsToReveal.forEach(el => {
+                            if (el.isRevealed == false) {                       //Verifica se já escontrou o elemento
+                                this.calculateIfScrolledTo(el)
+                            }
+                        })
+                    }
+                    calculateIfScrolledTo(el) {
+                        console.log("Scroll function calculed")
+                        let scrollPercent = (el.getBoundingClientRect().top / window.innerHeight) * 100
+                        if (scrollPercent < 75) {
+                            el.classList.add("reveal-item--is-visible")
+                            el.isRevealed = true;                               //Se encontrou, então seta para true
+                        }
+                    }
+                    hideInitially() {                                           
+                        this.itemsToReveal.forEach(el => {
+                            el.classList.add("reveal-item")
+                            el.isRevealed = false;                              //inicializamos com false, pois não achamos ainda o elemento
+                        })
+                    }
+                }
+
+                export default RevealOnScroll;
+9.1.2.3 - EX3: Ainda podemos melhorar ainda mais a performace desse evento. Podemoss eliminar o listener após o scroll chegar até o ultimo elemento.
+                
+                import throttle from 'lodash/throttle'
+
+                class RevealOnScroll {
+                    constructor () {
+                        this.itemsToReveal = document.querySelectorAll(".exp")
+                        this.hideInitially();
+                        this.scrollThrottle = throttle(this.calcCaller, 200).bind(this)
+                        this.events();
+                    }
+
+                    events() {
+                        window.addEventListener("scroll", this.scrollThrottle)
+                    }
+
+                    calcCaller() {
+                        console.log("Scroll function ran")
+                        this.itemsToReveal.forEach(el => {
+                            if (el.isRevealed == false) {
+                                this.calculateIfScrolledTo(el)
+                            }
+                        })
+                    }
+                    calculateIfScrolledTo(el) {
+                        let scrollPercent = (el.getBoundingClientRect().top / window.innerHeight) * 100
+                        console.log("Scroll function calculed")
+                        if (scrollPercent < 75) {
+                            el.classList.add("reveal-item--is-visible")
+                            el.isRevealed = true;
+
+                            if (el.isLastItem) {                                            //Verifica se é o ultimo elemento
+                                window.removeEventListener("scroll", this.scrollThrottle)   //Remove o listener
+                            }
+                        }
+                    }
+                    hideInitially() {
+                        this.itemsToReveal.forEach(el => {
+                            el.classList.add("reveal-item")
+                            el.isRevealed = false;
+                        })
+
+                        this.itemsToReveal[this.itemsToReveal.length - 1].isLastItem = true; //Seta no ultimo elemento como true, o resto não era essa propriedade
+                    }
+                }
+
+                export default RevealOnScroll;
+9.1.2.4 - EX4: Podemos melhorar ainda mais a performace, evitando que seja feito o calculo antes que scroll chegue ao primeiro elemento.
+            import throttle from 'lodash/throttle'
+
+            class RevealOnScroll {
+                constructor () {
+                    this.itemsToReveal = document.querySelectorAll(".exp")
+                    this.hideInitially();
+                    this.scrollThrottle = throttle(this.calcCaller, 200).bind(this)
+                    this.events();
+                }
+
+                events() {
+                    window.addEventListener("scroll", this.scrollThrottle)
+                }
+
+                calcCaller() {
+                    console.log("Scroll function ran")
+                    this.itemsToReveal.forEach(el => {
+                        if (el.isRevealed == false) {
+                            this.calculateIfScrolledTo(el)
+                        }
+                    })
+                }
+                
+                calculateIfScrolledTo(el) {
+                    if (window.scrollY + window.innerHeight > el.offsetTop) { //Aqui, verificamos se o scroll chegou ao primeiro elemento
+                        console.log("Scroll function calculed")
+                        let scrollPercent = (el.getBoundingClientRect().top / window.innerHeight) * 100
+                        if (scrollPercent < 75) {
+                            el.classList.add("reveal-item--is-visible")
+                            el.isRevealed = true;
+
+                            if (el.isLastItem) {
+                                window.removeEventListener("scroll", this.scrollThrottle)
+                            }
+                        }
+                    }
+                }
+                hideInitially() {
+                    this.itemsToReveal.forEach(el => {
+                        el.classList.add("reveal-item")
+                        el.isRevealed = false;
+                    })
+
+                    this.itemsToReveal[this.itemsToReveal.length - 1].isLastItem = true;
+                }
+            }
+
+            export default RevealOnScroll;
+9.1.3 - EX: Queremos que o browser fique monitorando quando for reajustado o tamanho da janela, ou seja, se foi diminuido ou aumentado as dimenesões da janela. Assim, utilizamos
+            a função debounce que apenas executará a funcao do listener quando o resize for definitivamente concluido e executará a mudança após uma faixa de tempo que podemos
+            definir.
+
+            import throttle from 'lodash/throttle'
+            import debounce from 'lodash/debounce'
+
+            class RevealOnScroll {
+                constructor () {
+                    this.itemsToReveal = document.querySelectorAll(".exp")
+                    this.browserHeight = window.innerHeight;                    //Como queremos saber o tamanho da tela e não queremos ficar pedindo toda a hora para o browser
+                                                                                //inserimos essa informação em um atributo de nossa classe.
+                    this.hideInitially();
+                    this.scrollThrottle = throttle(this.calcCaller, 200).bind(this)
+                    this.events();
+                }
+
+                events() {
+                    window.addEventListener("scroll", this.scrollThrottle)
+                    window.addEventListener("resize", debounce( () => {       //Contudo, mesmo que esse atributo seja atualizado toda a vez que é chamado, ele não atualizará se,
+                                                                              //a tela for reajustada para outro tamanho, fazendo com que o seja feito errado o calculo da posicao
+                                                                              //do scroll na tela. Então adicionamos um listener para que cada vez que tiver esse reajuste o
+                                                                              //atributo também seja reajustado.
+                        console.log("Resize just ran")
+                        this.browserHeight = window.innerHeight;
+                    }, 333))
+                }
+
+                calcCaller() {
+                    console.log("Scroll function ran")
+                    this.itemsToReveal.forEach(el => {
+                        if (el.isRevealed == false) {
+                            this.calculateIfScrolledTo(el)
+                        }
+                    })
+                }
+
+                calculateIfScrolledTo(el) {
+                    if (window.scrollY + this.browserHeight > el.offsetTop) {
+                        console.log("Scroll function calculed")
+                        let scrollPercent = (el.getBoundingClientRect().top / this.browserHeight) * 100
+                        if (scrollPercent < 75) {
+                            el.classList.add("reveal-item--is-visible")
+                            el.isRevealed = true;
+
+                            if (el.isLastItem) {
+                                window.removeEventListener("scroll", this.scrollThrottle)
+                            }
+                        }
+                    }
+                }
+                hideInitially() {
+                    this.itemsToReveal.forEach(el => {
+                        el.classList.add("reveal-item")
+                        el.isRevealed = false;
+                    })
+
+                    this.itemsToReveal[this.itemsToReveal.length - 1].isLastItem = true;
+                }
+            }
+
+            export default RevealOnScroll;
+

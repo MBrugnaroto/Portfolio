@@ -11,11 +11,13 @@
     &__positionInfo {
         padding-top: 30px;
         padding-bottom: 260px;
-        /*Centralizando elementros da div */
 
         @mixin atSmall {
             height: 750px;
-            
+        }
+
+        @mixin atLarge {
+            height: 850px;
         }
         display: flex;
         flex-direction: row;

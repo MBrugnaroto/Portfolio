@@ -1,9 +1,24 @@
 .exp {
-    
+
+    &__list {
+        padding: 0;
+        margin: 0;
+
+        li {
+            list-style: none;
+            margin-right: 30px;
+        }
+
+        li:nth-child(even) {
+            margin-right: 0px;
+        }
+        
+    }
+
     &__office {
         font-size: 1.18rem;
         margin-top: 21px;
-
+   
         @mixin atSmall {
             font-size: 1.25rem;
             margin-bottom: 0;
@@ -53,11 +68,14 @@
     &__description {
         font-size: 1rem;
         line-height: 1.6;
-        margin-bottom: 60px;
-
+     
         @mixin atSmall {
             margin-bottom: 20px;
             font-size: 1.1rem;
+        }
+        
+        @mixin atMedium {
+            height: 300px;
         }
     }
 
@@ -67,6 +85,13 @@
         @mixin atMedium {
             display: initial;
            
+        }
+    }
+
+    &__info {
+
+        @mixin atMedium {
+            height: 300px;
         }
     }
    
