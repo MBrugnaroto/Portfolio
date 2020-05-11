@@ -13,10 +13,6 @@
             @mixin atMedium {
                 padding-left: 20px;
             }
-
-            @mixin atLarge {
-                padding-left: 60px;
-            }
         }
 
         a {
@@ -27,12 +23,13 @@
     }
     
     &__projects {
-        justify-content: center;
         position: relative;
         text-align: center;
+        width: 100%;
 
         @mixin atSmall {
             display: flex;
+            justify-content: center;
         }
     }
 
@@ -41,8 +38,10 @@
         height: 250px;
         border-radius: 4rem;
         position: relative;
-        
+        margin-bottom: 40px;
+
         @mixin atSmall {
+            margin-bottom: 0;
             height: 280px;
         }
         @mixin atMedium {
@@ -153,5 +152,95 @@
     &__project-container:hover &__project--info {
         opacity: 1;
         height: 50%;
+    }
+
+    &__project-container__info {
+        padding: 0 20px;
+        position: absolute;
+        width: 100%;
+        background-color: rgba($grayTitle, .7);
+        text-align: left;
+        border-radius: 1rem;
+        display: none;
+        z-index: -11;
+
+        p {
+            color: #FFF;
+        }
+        &--icon {
+            width: 19px;
+            height: 20px;
+            position: absolute;
+            z-index: 10;
+            top: 8px;
+            right: 10px;
+    
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 20px;
+                height: 3px;
+                background-color: $grayTitle;
+                transform-origin: 0 50%;
+                transform: rotate(45deg) scaleX(1.29) ;
+            }
+    
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 20px;
+                height: 3px;
+                background-color: $grayTitle;
+                transform-origin: 0 100%;
+                transform: rotate(-45deg) scaleX(1.25) translateY(1.4px);
+            }
+        }
+
+        &--open {
+            display: block;
+            z-index: 10;
+        }
+
+        &--close {
+            display: none;
+            z-index: -11;
+        }
+    }
+
+    &__info {
+        position: relative;
+    }
+
+    &__info--description {
+        @mixin atSmall {
+            max-width: 400px;
+        }
+
+        @mixin atMedium {
+            max-width: 500px;
+        }
+        
+        @mixin atLarge {
+            max-width: 600px;
+        }
+    }
+
+    &__info--features {
+
+        @mixin atSmall {
+            position: absolute;
+            top: 60%;
+            transform: translate(0, -50%);
+            right: 80px;
+        }
+
+        @mixin atMedium {
+            right: 150px;
+        }
+        
     }
 }

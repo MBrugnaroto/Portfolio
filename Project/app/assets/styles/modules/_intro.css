@@ -1,29 +1,36 @@
 .intro {
-    font-family: 'Montserrat', sans-serif;
-    font-style: bold;
     font-size: 1.125rem; /* 18px */
     text-align: center;
-    
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    height: 350px;
+    padding-bottom: 150px;
+    box-sizing: content-box;
+
+    @mixin atSmaller {
+        height: 450px;
+        padding-bottom: 200px;
+    }
+
+    @mixin atSmall {
+        height: 400px;
+        padding-bottom: 50px;    
+    }
+
+    @mixin atMedium {
+        height: 500px;
+        padding-bottom: 100px;
+    }
+
+    @mixin atLarge {
+        height: 600px;
+        padding-bottom: 150px;
+    }
+
     @mixin atSmall {
         text-align: left;
     }
-    
-    &__positionInfo {
-        padding-top: 30px;
-        padding-bottom: 260px;
-
-        @mixin atSmall {
-            height: 750px;
-        }
-
-        @mixin atLarge {
-            height: 850px;
-        }
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-
 
     &__wellcome {
         letter-spacing: 0.15rem;
@@ -31,7 +38,7 @@
         color: $grayWellcome;
         margin-bottom: -10px;
         
-        @mixin atSmall {
+        @mixin atMedium {
             margin-bottom: -20px;
         }
     }
@@ -42,7 +49,7 @@
         font-size: 2.125rem;
         margin-bottom: -5px;
 
-        @mixin atSmall {
+        @mixin atMedium {
             font-size: 2.75rem;
         }
     }
@@ -57,10 +64,13 @@
         margin-right: auto;
         
         @mixin atSmall {
+            margin-left: 0px;
+        }
+
+        @mixin atMedium {
             font-size: 1.125rem;
             margin-bottom: 33px;
-            max-width: 442px;
-            margin-left: 0px;
+            max-width: 380px;
         }
     }
 
@@ -71,6 +81,11 @@
         @mixin atSmall {
             picture {
                 display: block;
+            }
+
+            picture img {
+                width: 100%;
+                height: 100%;
             }
         }
     }

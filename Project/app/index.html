@@ -33,7 +33,7 @@
                 <div class="site-header__menu-icon__middle"></div>
               </div>
               <div class="site-header__menu-content">
-                <nav class="primary-nav">
+                <nav class="primary-nav primary-nav__align-right">
                   <ul>
                     <li><a href="" class="primary-nav__link">Home</a></li>
                     <li><a href="" class="primary-nav__link">Sobre</a></li>
@@ -46,26 +46,27 @@
             </div>
           </div>
       </header>
-      
+          
       <!--Introdução -->
       <section class="page-section--gray">
-        <div class="wrapper row intro">
-          <div class="row--small-6 intro__positionInfo">
-            <div>
-              <h5 class="intro__wellcome">Olá, meu nome é</h5>
-              <h1 class="intro__name">Mateus Brugnaroto</h1>
-              <p class="intro__description">Seja bem vindo ao meu portfólio. Sou um engenheiro de
-                  software pronto para resolver o seu problema.</p>
-              <button class="btn">MEUS TRABALHOS</button>
+        <div class="wrapper row">
+          <div class="intro">
+            <div class="row--small-5 intro__info">
+              <div>
+                <h5 class="intro__wellcome">Olá, meu nome é</h5>
+                <h1 class="intro__name">Mateus Brugnaroto</h1>
+                <p class="intro__description">Seja bem vindo ao meu portfólio. Sou um engenheiro de
+                    software pronto para resolver o seu problema.</p>
+                <button class="btn">MEUS TRABALHOS</button>
+              </div>
+            </div>
+            <div class="row--small-7 intro__img">
+              <picture>
+                <img src="assets/Images/web/img/Introdução/Img-Introducao.svg" alt="">
+              </picture>
             </div>
           </div>
-          <div class="row--small-6 intro__img">
-            <picture>
-              <source srcset="assets/Images/web/img/Introdução/Img-Introducao.svg" media="(min-width: 990px)">
-                <source srcset="assets/Images/mobile/img/Introdução/Tablet/Img-Introducao.svg" media="(min-width: 650px)">
-              <img srcset="assets/images/mobile/img/Introdução/Img-Introducao.svg 640w" alt="Imagem introducao">
-            </picture>
-          </div>
+          
         </div>
       </section> 
       <!--Introdução -->
@@ -214,7 +215,6 @@
             </nav>
           </div>
 
-
           <div class="portfolio__projects row--small-12 row--medium-gutters">
             <div class="portfolio__project-container row--3 row--medium-5 row--large-3">
               <div class="portfolio__project--img">
@@ -226,19 +226,44 @@
               </div>
               <div class="portfolio__project--view">
                 <div>
-                  <a href="">
-                    <picture>
-                      <source srcset="assets/images/web/icons/Portfolio/icon.svg" media="(min-width: 1020px)">
-                      <source srcset="assets/images/web/icons/Portfolio/icon-tablet.svg" media="(min-width: 700px)">
-                      <img srcset="assets/images/web/icons/Portfolio/icon-mobile.svg" alt="Our founder, Jane Doe">
-                    </picture>
-                  </a>
+                  <picture>
+                    <source srcset="assets/images/web/icons/Portfolio/icon.svg" media="(min-width: 1020px)">
+                    <source srcset="assets/images/web/icons/Portfolio/icon-tablet.svg" media="(min-width: 700px)">
+                    <img srcset="assets/images/web/icons/Portfolio/icon-mobile.svg" alt="Our founder, Jane Doe">
+                  </picture>
                 </div>
               </div>
               <div class="portfolio__project--info">
                 <div class="portfolio__project--info-name">Pastejando</div>
                 <div class="portfolio__project--info-type">Aplicativo</div>
               </div>
+            </div>
+
+            <div class="portfolio__project-container__info">
+              <div class="portfolio__info">
+                <div class="portfolio__info--description">
+                  <h3>Pastejando</h3>
+                  <p>O Pastejando é um software que visa auxiliar o produtor rural ou técnico extensionista durante 
+                    as atividades de planejamento forrageiro em propriedades rurais. Desenvolvido pela Embrapa Clima Temperado em parceria com a empresa Júnior Hut8, 
+                    este aplicativo apresenta um vasto acervo de espécies de forrageiras cadastradas e disponibilizadas para consulta. Todas as informações do acervo são 
+                    constituídas por dados abertos gerados e fornecidos pela Embrapa</p>
+                </div>
+                <div class="portfolio__info--features">
+                  <p>Tipo: Aplicativo</p>
+                  <p>Cliente: Embrapa</p>
+                  <p>Criado por: Hut8</p>
+                  <p>Periodo: 2017-2018</p>
+                  <p>Tecnologias: Java</p>
+                </div>
+              </div>
+              
+              
+              <div class="row--small-12">
+                <h3>Galeria do Projeto</h3>
+              </div>
+              
+              <div class="portfolio__project-container__info--icon"></div>
+              
             </div>
           </div>
         </div>

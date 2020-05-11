@@ -51,9 +51,15 @@
     }
 
     @mixin atSmall {
+
+        &--small-2 {
+            float: left;
+            width: 16.66%;
+        }
+
         &--small-3 {
             float: left;
-            width: 33%;
+            width: 25%;
         }
 
         &--small-4 {
@@ -74,6 +80,16 @@
         &--small-7 {
             float: left;
             width: 58.33%;
+        }
+
+        &--small-8 {
+            float: left;
+            width: 66.66%;
+        }
+
+        &--small-9 {
+            float: left;
+            width: 75%;
         }
 
         &--small-12 {

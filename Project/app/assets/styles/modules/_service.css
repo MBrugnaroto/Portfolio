@@ -1,9 +1,11 @@
 .service {
     &__list {
         text-align: center;
-        
+        margin-left: -10px;
+
         ul {
             padding: 0;
+            
         }
       
         li {
@@ -11,7 +13,6 @@
             list-style: none;
             margin-right: 30px;
         }
-        
     }
     &__card {
         max-width: 250px;

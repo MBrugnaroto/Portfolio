@@ -1,5 +1,4 @@
 .primary-nav {
-    
     ul {
         text-align: center;
         margin: 0;
@@ -7,18 +6,27 @@
 
         @mixin atSmall {
             padding-left: 50px;
-        }
-
-        @mixin atMedium {
-            text-align: right;
-            padding-right: 50px;
+        }       
+    }
+    
+    &__align-right {
+        ul {
+            @mixin atMedium {
+                text-align: right;
+            }
         }
     }
 
     li {
         display: inline-block;
         list-style: none;
-        padding-right: 0px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+
+        @mixin atSmall {
+            padding-bottom: 0px;
+        }
+
         @mixin atMedium {
             padding-right: 40px;
         }
@@ -26,14 +34,6 @@
 
     li:last-child {
         padding-right: 0;
-        padding-top: 10px;
-
-        @mixin atSmall {
-            padding-top: 0px;
-        }
-        @mixin atLarge {
-            padding-right: 40px;
-        }
     }
 
     li:first-child {
@@ -95,5 +95,4 @@
             background: rgba($grayTitle, .5);
         }
     }
-
 }
