@@ -1,25 +1,6 @@
 .portfolio {
     &__list {
         margin-bottom: 30px;
-
-        ul {
-            text-align: center;
-            padding-right: 15px;
-            
-            @mixin atSmall {
-                padding-left: 20px;
-            }
-    
-            @mixin atMedium {
-                padding-left: 20px;
-            }
-        }
-
-        a {
-           background-color: transparent;
-           border-radius: 0;
-           box-shadow: none;
-        }
     }
     
     &__projects {

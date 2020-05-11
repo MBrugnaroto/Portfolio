@@ -1,43 +1,32 @@
 .intro {
-    font-size: 1.125rem; /* 18px */
     text-align: center;
     display: flex;
     align-items: center;
     z-index: 1;
-    height: 350px;
-    padding-bottom: 150px;
-    box-sizing: content-box;
+    height: 100vh;
+    padding-top: 50px;
 
     @mixin atSmaller {
-        height: 450px;
-        padding-bottom: 200px;
+        padding-top: 0;
     }
-
-    @mixin atSmall {
-        height: 400px;
-        padding-bottom: 50px;    
-    }
-
-    @mixin atMedium {
-        height: 500px;
-        padding-bottom: 100px;
-    }
-
     @mixin atLarge {
-        height: 600px;
-        padding-bottom: 150px;
-    }
-
+        padding-top: 90px;
+    }    
+    
     @mixin atSmall {
         text-align: left;
     }
 
     &__wellcome {
+        font-size: 0.875rem;
         letter-spacing: 0.15rem;
         text-transform: uppercase;
         color: $grayWellcome;
         margin-bottom: -10px;
         
+        @mixin atSmaller {
+            font-size: 1rem;
+        }
         @mixin atMedium {
             margin-bottom: -20px;
         }
@@ -46,8 +35,12 @@
     &__name {
         text-transform: uppercase;
         color: $grayName;
-        font-size: 2.125rem;
+        font-size: 1.5rem;
         margin-bottom: -5px;
+
+        @mixin atSmaller {
+            font-size: 2.25rem;
+        }
 
         @mixin atMedium {
             font-size: 2.75rem;
@@ -55,6 +48,7 @@
     }
 
     &__description {
+        font-size: 0.875rem;
         letter-spacing: 0.02rem;
         line-height: 1.5rem;
         color: $grayDescription;
@@ -63,6 +57,9 @@
         margin-left: auto;
         margin-right: auto;
         
+        @mixin atSmaller {
+            font-size: 1rem;
+        }
         @mixin atSmall {
             margin-left: 0px;
         }

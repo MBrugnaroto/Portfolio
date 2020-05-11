@@ -1,13 +1,8 @@
 .site-header {
-    position: relative;
+    position: absolute;
     padding-top: 30px;
-    padding-bottom: 15px;
     width: 100%;
     transition: background-color .3s ease-out;
-
-    @mixin atSmall {
-        padding-bottom: 30px;
-    }
 
     &__menu-content {
         opacity: 0;
@@ -15,24 +10,19 @@
         z-index: -10;
         transform: scale(1.2);
         transition: all .3s ease-out;
-        padding-top: 20px;
+        padding-bottom: 10px;
         
         @mixin atSmall {
-            z-index: 1;
-            padding-top: 0;
+            padding-bottom: 50px;
         }
 
         @mixin atMedium {
-            margin-left: 170px;
-            max-width: 800px;
             z-index: 1;
             opacity: 1;
             transform: scale(1);
+            padding-bottom: 0;
         }
 
-        @mixin atLarge {
-            max-width: 100%;
-        }
 
         &--is-visible {
             opacity: 1;
@@ -46,9 +36,9 @@
         height: 19px;
         position: absolute;
         z-index: 10;
-        top: 8px;
-        right: 10px;
-
+        top: 9.7px;
+        right: 50px;
+        
         &::before {
             content: "";
             position: absolute;
@@ -85,7 +75,7 @@
         }
 
         @mixin atSmall {
-            top: 25px;
+            top: 35px;
         }
         @mixin atMedium {
             display: none;
@@ -108,7 +98,6 @@
 
     &__logo {
         position: absolute;
-        top: 0;
     }
 
     &--is-expanded {
